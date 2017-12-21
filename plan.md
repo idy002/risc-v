@@ -23,7 +23,7 @@
 - [ ] SLTI
 - [ ] SLTIU
 - [ ] XORI
-- [*] ORI
+- [x] ORI
 - [ ] ANDI
 - [ ] SLLI
 - [ ] SRLI
