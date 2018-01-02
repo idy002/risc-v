@@ -4,19 +4,19 @@
 
 module mem(
         input wire rst,
-        
+
         //  input from ex_mem
         input wire[`RegDataWidth-1:0] wdata_i,
         input wire[`RegAddrWidth-1:0] wd_i,
         input wire wreg_i,
-        
+
         //  output to mem_wb
         output reg[`RegDataWidth-1:0] wdata_o,
         output reg[`RegAddrWidth-1:0] wd_o,
         output reg wreg_o
     );
-    
-    always @ (*) 
+
+    always @ (*)
     begin
         if (rst == `RstEnable) begin
             wdata_o <= `ZeroWord;
