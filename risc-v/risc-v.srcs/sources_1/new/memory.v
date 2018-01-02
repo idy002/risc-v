@@ -6,12 +6,11 @@ module memory(
         input wire[`MemAddrWidth-1:0] addr,
         output reg[`InstWidth-1:0] inst
     );
-    
+
     reg[`MemDataWidth-1:0]  mem[0:`MemNum];
-    
-    initial $readmemh("D:\mem.data", mem);
-    
-    always @ (*) 
+    initial $readmemh(`MemFile, mem);
+
+    always @ (*)
     begin
         if (ce == `ChipDisable) begin
             inst <= `ZeroWord;
@@ -19,5 +18,5 @@ module memory(
             inst <= mem[addr[`MemNumLog2+1:2]];
         end
     end
-    
+
 endmodule
