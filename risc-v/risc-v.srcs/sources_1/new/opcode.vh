@@ -74,3 +74,6 @@
 
 `define EXE_NOP_OP  5'b00000
 `define EXE_OR_OP   5'b00001
+
+//
+// vim:filetype=verilog:

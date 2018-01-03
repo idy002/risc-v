@@ -24,6 +24,13 @@ module regfile(
     );
     
     reg[`RegDataWidth-1:0] regs[0:`RegNum-1];
+
+	integer i;
+	initial begin
+		for(i = 0; i < `RegNum; i=i+1) begin
+			$dumpvars(0, regs[i]);
+		end
+	end
     
     //  write port
     always @ (posedge clk) 

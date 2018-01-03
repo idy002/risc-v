@@ -4,8 +4,8 @@
 //
 //  global definitions
 //
-`define MemFile         "/home/idy002/github/risc-v/inst.mem"
-`define WaveFile        "/home/idy002/github/risc-v/wave.vcd"
+`define MemFile         "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/inst.mem"
+`define WaveFile        "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
 `define ChipEnable      1'b1
 `define ChipDisable     1'b0
 `define RstEnable       1'b1
@@ -17,7 +17,7 @@
 //
 //  memory
 //
-`define MemDataWidth    32
+`define MemDataWidth    8
 `define MemNum          1024
 `define MemNumLog2      10
 
@@ -44,3 +44,7 @@
 //
 `define AluOpWidth      5
 `define AluSelWidth     3
+
+
+//
+// vim:filetype=verilog
