@@ -64,6 +64,16 @@ module risc32i(
     wire[`RegDataWidth-1:0] reg1_data;
     wire[`RegAddrWidth-1:0] reg2_addr;
     wire[`RegDataWidth-1:0] reg2_data;  
+
+	//	ex -> id
+	wire[`RegDataWidth-1:0] ex_wdata;
+	wire[`RegAddrWidth-1:0] ex_wd;
+	wire ex_wreg;
+
+	//	mem -> id
+	wire[`RegDataWidth-1:0] mem_wdata;
+	wire[`RegAddrWidth-1:0] mem_wd;
+	wire mem_wreg;
     
     //  pc_reg
     pc_reg pc_reg0(
@@ -100,8 +110,18 @@ module risc32i(
         .reg1_read_o(reg1_read),
         .reg1_addr_o(reg1_addr),
         .reg2_read_o(reg2_read),
-        .reg2_addr_o(reg2_addr)
+        .reg2_addr_o(reg2_addr),
+		.ex_wdata_i(ex_wdata), .ex_wd_i(ex_wd), .ex_wreg_i(ex_wreg),
+		.mem_wdata_i(mem_wdata), .mem_wd_i(mem_wd), .mem_wreg_i(mem_wreg)
     );
+	assign ex_wdata = ex_wdata_o;
+	assign ex_wd = ex_wd_o;
+	assign ex_wreg = ex_wreg_o; 
+
+	//	mem -> id
+	assign mem_wdata = mem_wdata_o;
+	assign mem_wd = mem_wd_o;
+	assign mem_wreg = mem_wreg_o;
     
     //  id_ex
     id_ex id_ex0(

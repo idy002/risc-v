@@ -1,13 +1,13 @@
 //  opcode
-`define OP_LUI      7'b0110111
-`define OP_AUIPC    7'b0010111
+`define OP_LUI      7'b0110111  // Finish
+`define OP_AUIPC    7'b0010111	// Finish
 `define OP_JAL      7'b1101111
 `define OP_JALR     7'b1100111
 `define OP_BRANCH   7'b1100011
 `define OP_LOAD     7'b0000011
 `define OP_STORE    7'b0100011
-`define OP_OP_IMM   7'b0010011
-`define OP_OP       7'b0110011
+`define OP_OP_IMM   7'b0010011	// Finish
+`define OP_OP       7'b0110011	// Finish
 `define OP_MISC_MEM 7'b0001111
 
 // JALR
@@ -69,11 +69,22 @@
 
 
 //  code for ALU
-`define EXE_NOP_RES     3'b000
-`define EXE_LOGIC_RES   3'b001
+`define EXE_NOP_RES     3'd0
+`define EXE_LOGIC_RES   3'd1
+`define EXE_ARITH_RES   3'd2
+`define EXE_SHIFT_RES   3'd3
 
-`define EXE_NOP_OP  5'b00000
-`define EXE_OR_OP   5'b00001
+`define EXE_NOP_OP   5'd0
+`define EXE_ADD_OP   5'd1
+`define EXE_SUB_OP   5'd2
+`define EXE_SLT_OP   5'd3
+`define EXE_SLTU_OP  5'd4
+`define EXE_XOR_OP   5'd5
+`define EXE_OR_OP    5'd6
+`define EXE_AND_OP   5'd7
+`define EXE_SLL_OP   5'd8
+`define EXE_SRL_OP   5'd9
+`define EXE_SRA_OP   5'd10
 
 //
 // vim:filetype=verilog:

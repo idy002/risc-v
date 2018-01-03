@@ -20,12 +20,13 @@ SOURSES =    $(SOURSE_DIR)pc_reg.v \
 
 start : 
 	@echo "Hello, ding!"
+
 edit : 
 	vim -p $(SOURSES) inst.S
 
 wave : dump.vcd
 	#   --   Show wave   --
-	gtkwave dump.vcd
+	gtkwave dump.vcd &
 
 dump.vcd : sopc inst.mem
 	#   --   Simulate   --
@@ -46,7 +47,8 @@ sopc : $(SOURSES)
 %.mem : %.om
 	#   --   Complie Instruction   --
 	$(COMPLIE)objcopy -O verilog $< $@
-	sed -i '1d' $@
+	sed -i '1s/^.*$$/00 00 00 00/' $@
+	
 
 clean : 
 	rm -f *.o *.om *.mem wave.vcd sopc 

@@ -38,6 +38,10 @@
 //
 `define InstValid       1'b1
 `define InstInvalid     1'b0
+`define DataZero		2'd0
+`define DataImm			2'd1
+`define DataPC			2'd2
+`define DataReg			2'd3
 
 //
 //  ex(execusion)
