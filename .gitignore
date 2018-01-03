@@ -1,0 +1,5 @@
+*.o
+*.om
+*.mem
+*.vcd
+sopc
