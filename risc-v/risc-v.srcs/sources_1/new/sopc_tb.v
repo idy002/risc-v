@@ -10,7 +10,7 @@ module sopc_tb();
     end
 
     initial begin
-        $dumpfile("/home/idy002/github/risc-v/wave.vcd");
+        $dumpfile(`WaveFile);
         $dumpvars;
         rst = `RstEnable;
         #195 rst = `RstDisable;
