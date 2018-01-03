@@ -107,7 +107,7 @@ module id(
         if (rst == `RstEnable) begin
             reg2_o <= `ZeroWord;
         end else if (reg2_read_o == `ReadEnable) begin
-            reg2_o <= reg1_data_i;
+            reg2_o <= reg2_data_i;
         end else if (reg2_read_o == `ReadDisable) begin
             reg2_o <= imm;
         end else begin

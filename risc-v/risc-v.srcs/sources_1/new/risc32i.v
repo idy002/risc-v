@@ -7,11 +7,11 @@ module risc32i(
         input wire rst,
         
         //  input from memory
-        input [`RegDataWidth-1:0] memory_data_i,
+        input wire[`RegDataWidth-1:0] memory_data_i,
         
         //  output to memory
-        output [`MemAddrWidth-1:0] memory_addr_o,
-        output memory_ce_o
+        output wire[`MemAddrWidth-1:0] memory_addr_o,
+        output wire memory_ce_o
     );
     
     //  pc_reg -> if_id
@@ -82,20 +82,25 @@ module risc32i(
         .id_pc(id_pc_i),
         .id_inst(id_inst_i)
     );
+    assign memory_addr_o = pc;
     
     //  id
     id id0(
         .rst(rst),
         .pc_i(id_pc_i),
         .inst_i(id_inst_i),
-        .reg1_data_i(reg1_data),
-        .reg2_data_i(reg2_data),
         .aluop_o(id_aluop_o),
         .alusel_o(id_alusel_o),
         .reg1_o(id_reg1_o),
         .reg2_o(id_reg2_o),
         .wd_o(id_wd_o),
-        .wreg_o(id_wreg_o)
+        .wreg_o(id_wreg_o),        
+        .reg1_data_i(reg1_data),
+        .reg2_data_i(reg2_data),
+        .reg1_read_o(reg1_read),
+        .reg1_addr_o(reg1_addr),
+        .reg2_read_o(reg2_read),
+        .reg2_addr_o(reg2_addr)
     );
     
     //  id_ex
@@ -173,6 +178,10 @@ module risc32i(
         .waddr(wb_wd_i),
         .we(wb_wreg_i),
         .rdata1(reg1_data),
-        .rdata2(reg2_data)
+        .rdata2(reg2_data),
+        .re1(reg1_read),
+        .re2(reg2_read),
+        .raddr1(reg1_addr),
+        .raddr2(reg2_addr)
     );
 endmodule

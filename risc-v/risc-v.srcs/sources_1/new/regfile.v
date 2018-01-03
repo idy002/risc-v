@@ -40,11 +40,11 @@ module regfile(
     begin
         if (rst == `RstEnable) begin
             rdata1 <= `ZeroWord;
-        end if (re1 == `ReadDisable) begin
+        end else if (re1 == `ReadDisable) begin
             rdata1 <= `ZeroWord;
-        end if (raddr1 == `ZeroRegAddr) begin
+        end else if (raddr1 == `ZeroRegAddr) begin
             rdata1 <= `ZeroWord;
-        end if (raddr1 == waddr && we == `WriteEnable) begin
+        end else if (raddr1 == waddr && we == `WriteEnable) begin
             rdata1 <= wdata;
         end else begin
             rdata1 <= regs[raddr1];
@@ -56,11 +56,11 @@ module regfile(
     begin
         if (rst == `RstEnable) begin
             rdata2 <= `ZeroWord;
-        end if (re2 == `ReadDisable) begin
+        end else if (re2 == `ReadDisable) begin
             rdata2 <= `ZeroWord;
-        end if (raddr2 == `ZeroRegAddr) begin
+        end else if (raddr2 == `ZeroRegAddr) begin
             rdata2 <= `ZeroWord;
-        end if (raddr2 == waddr && we == `WriteEnable) begin
+        end else if (raddr2 == waddr && we == `WriteEnable) begin
             rdata2 <= wdata;
         end else begin
             rdata2 <= regs[raddr2];

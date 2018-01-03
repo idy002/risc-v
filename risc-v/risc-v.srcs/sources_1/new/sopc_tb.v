@@ -12,7 +12,7 @@ module sopc_tb();
     initial begin
         rst = `RstEnable;
         #195 rst = `RstDisable;
-        #1000 $stop;
+        #1000 $finish;
     end
     
     sopc sopc0(
