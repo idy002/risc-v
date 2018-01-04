@@ -4,8 +4,10 @@
 //
 //  global definitions
 //
-`define MemFile         "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/inst.mem"
-`define WaveFile        "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
+//`define MemFile         "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/inst.mem"
+//`define WaveFile        "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
+`define MemFile         "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/inst.mem"
+`define WaveFile        "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
 `define ChipEnable      1'b1
 `define ChipDisable     1'b0
 `define RstEnable       1'b1
