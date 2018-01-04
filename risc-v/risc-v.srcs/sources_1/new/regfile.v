@@ -5,6 +5,7 @@
 module regfile(
         input wire clk,
         input wire rst,
+		input wire[5:0] stall,
         
         //  write port
         input wire we,
@@ -34,11 +35,13 @@ module regfile(
     //  write port
     always @ (posedge clk) 
     begin
-        if (rst == `RstDisable) begin
+		if (rst == `RstEnable) begin
+			//	do nothing
+		end else if(!stall[5]) begin
             if (we == `WriteEnable && waddr != `ZeroRegAddr) begin
                 regs[waddr] <= wdata;
             end
-        end 
+		end 
     end
     
     //  read port 1

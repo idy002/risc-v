@@ -14,194 +14,227 @@ module risc32i(
         output wire memory_ce_o
     );
     
-    //  pc_reg -> if_id
-    wire[`MemAddrWidth-1:0] pc;
+    //  pc_reg outputs
+    wire[`MemAddrWidth-1:0] pcreg_pc;
+	wire pcreg_ce;
     
-    //  if_id -> id
-    wire[`MemAddrWidth-1:0] id_pc_i;
-    wire[`InstWidth-1:0] id_inst_i;
+    //  if_id outputs
+    wire[`MemAddrWidth-1:0] ifid_pc;
+    wire[`InstWidth-1:0] ifid_inst;
     
-    //  id -> id_ex
-    wire[`AluOpWidth-1:0] id_aluop_o;
-    wire[`AluSelWidth-1:0] id_alusel_o;
-    wire[`RegDataWidth-1:0] id_reg1_o;
-    wire[`RegDataWidth-1:0] id_reg2_o;
-    wire[`RegAddrWidth-1:0] id_wd_o;
-    wire id_wreg_o;
+    //  id outputs
+    wire id_reg1_read;
+    wire id_reg2_read;
+    wire[`RegAddrWidth-1:0] id_reg1_addr;
+    wire[`RegAddrWidth-1:0] id_reg2_addr;
+    wire[`AluOpWidth-1:0] id_aluop;
+    wire[`AluSelWidth-1:0] id_alusel;
+    wire[`RegDataWidth-1:0] id_reg1;
+    wire[`RegDataWidth-1:0] id_reg2;
+    wire[`RegAddrWidth-1:0] id_wd;
+    wire id_wreg;
+	wire[`RegDataWidth-1:0] id_addr_base;
+	wire[`RegDataWidth-1:0] id_addr_off;
+	wire[1:0] id_jump_type;
+	wire id_stallreq;
+
+	//	regfile outputs
+    wire[`RegDataWidth-1:0] reg_reg1_data;
+    wire[`RegDataWidth-1:0] reg_reg2_data;  
+
+    //  id_ex outputs
+    wire[`AluOpWidth-1:0]    idex_aluop;
+    wire[`AluSelWidth-1:0]   idex_alusel;
+    wire[`RegDataWidth-1:0]  idex_reg1;  
+    wire[`RegDataWidth-1:0]  idex_reg2;  
+    wire[`RegAddrWidth-1:0]  idex_wd;    
+    wire idex_wreg;   
+	wire[`RegDataWidth-1:0]  idex_addr_base;
+	wire[`RegDataWidth-1:0]  idex_addr_off;
+	wire[1:0] idex_jump_type;
     
-    //  id_ex -> ex
-    wire[`AluOpWidth-1:0]    ex_aluop_i;
-    wire[`AluSelWidth-1:0]   ex_alusel_i;
-    wire[`RegDataWidth-1:0]  ex_reg1_i;  
-    wire[`RegDataWidth-1:0]  ex_reg2_i;  
-    wire[`RegAddrWidth-1:0]  ex_wd_i;    
-    wire ex_wreg_i;   
+    //  ex outputs
+    wire[`RegDataWidth-1:0] ex_wdata; 
+    wire[`RegAddrWidth-1:0] ex_wd;    
+    wire ex_wreg;                      
+	wire[`RegDataWidth-1:0] ex_addr;
     
-    //  ex -> ex_mem
-    wire[`RegDataWidth-1:0] ex_wdata_o; 
-    wire[`RegAddrWidth-1:0] ex_wd_o;    
-    wire ex_wreg_o;                      
-    
-    //  ex_mem -> mem
-    wire[`RegDataWidth-1:0] mem_wdata_i;   
-    wire[`RegAddrWidth-1:0] mem_wd_i;      
-    wire mem_wreg_i;
+    //  ex_mem outputs
+    wire[`RegDataWidth-1:0] exmem_wdata;   
+    wire[`RegAddrWidth-1:0] exmem_wd;      
+    wire exmem_wreg;
                             
-    //  mem -> mem_wb
-    wire[`RegDataWidth-1:0] mem_wdata_o; 
-    wire[`RegAddrWidth-1:0] mem_wd_o;    
-    wire mem_wreg_o;                    
+    //  mem outputs
+    wire[`RegDataWidth-1:0] mem_wdata; 
+    wire[`RegAddrWidth-1:0] mem_wd;    
+    wire mem_wreg;                    
       
-    //  wb -> regfile
-    wire[`RegDataWidth-1:0] wb_wdata_i;   
-    wire[`RegAddrWidth-1:0] wb_wd_i;      
-    wire wb_wreg_i;
+    //  memwb outputs
+    wire[`RegDataWidth-1:0] memwb_wdata;   
+    wire[`RegAddrWidth-1:0] memwb_wd;      
+    wire memwb_wreg;
 
-    //  id <-> regfile
-    wire reg1_read;
-    wire reg2_read;
-    wire[`RegAddrWidth-1:0] reg1_addr;
-    wire[`RegDataWidth-1:0] reg1_data;
-    wire[`RegAddrWidth-1:0] reg2_addr;
-    wire[`RegDataWidth-1:0] reg2_data;  
+	//	ctrl outputs
+	wire[5:0] ctrl_stall;
 
-	//	ex -> id
-	wire[`RegDataWidth-1:0] ex_wdata;
-	wire[`RegAddrWidth-1:0] ex_wd;
-	wire ex_wreg;
-
-	//	mem -> id
-	wire[`RegDataWidth-1:0] mem_wdata;
-	wire[`RegAddrWidth-1:0] mem_wd;
-	wire mem_wreg;
     
     //  pc_reg
     pc_reg pc_reg0(
         .clk(clk), 
         .rst(rst), 
-        .pc(pc), 
-        .ce(memory_ce_o)
+		.stall(ctrl_stall),
+		.ex_jump(ex_wdata[0]),
+		.idex_jump_type(idex_jump_type),
+		.ex_addr(ex_addr),
+        .pc(pcreg_pc), 
+        .ce(pcreg_ce)
     );
+	assign memory_ce_o = pcreg_ce;
+    assign memory_addr_o = pcreg_pc;
     
     //  if_id
     if_id if_id0(
         .clk(clk),
         .rst(rst),
-        .if_pc(pc),
+		.stall(ctrl_stall),
+        .if_pc(pcreg_pc),
         .if_inst(memory_data_i),
-        .id_pc(id_pc_i),
-        .id_inst(id_inst_i)
+		.ex_jump(ex_wdata[0]),
+		.idex_jump_type(idex_jump_type),
+        .id_pc(ifid_pc),
+        .id_inst(ifid_inst)
     );
-    assign memory_addr_o = pc;
     
     //  id
     id id0(
         .rst(rst),
-        .pc_i(id_pc_i),
-        .inst_i(id_inst_i),
-        .aluop_o(id_aluop_o),
-        .alusel_o(id_alusel_o),
-        .reg1_o(id_reg1_o),
-        .reg2_o(id_reg2_o),
-        .wd_o(id_wd_o),
-        .wreg_o(id_wreg_o),        
-        .reg1_data_i(reg1_data),
-        .reg2_data_i(reg2_data),
-        .reg1_read_o(reg1_read),
-        .reg1_addr_o(reg1_addr),
-        .reg2_read_o(reg2_read),
-        .reg2_addr_o(reg2_addr),
-		.ex_wdata_i(ex_wdata), .ex_wd_i(ex_wd), .ex_wreg_i(ex_wreg),
-		.mem_wdata_i(mem_wdata), .mem_wd_i(mem_wd), .mem_wreg_i(mem_wreg)
+        .pc_i(ifid_pc),
+        .inst_i(ifid_inst),
+        .reg1_data_i(reg_reg1_data),
+        .reg2_data_i(reg_reg2_data),
+		.mem_wdata_i(mem_wdata), 
+		.mem_wd_i(mem_wd), 
+		.mem_wreg_i(mem_wreg),
+		.jump_type_i(idex_jump_type),
+		.ex_wdata_i(ex_wdata), 
+		.ex_wd_i(ex_wd), 
+		.ex_wreg_i(ex_wreg),
+        .reg1_read_o(id_reg1_read),
+        .reg2_read_o(id_reg2_read),
+        .reg1_addr_o(id_reg1_addr),
+        .reg2_addr_o(id_reg2_addr),
+        .aluop_o(id_aluop),
+        .alusel_o(id_alusel),
+        .reg1_o(id_reg1),
+        .reg2_o(id_reg2),
+        .wd_o(id_wd),
+        .wreg_o(id_wreg),        
+		.addr_base(id_addr_base),
+		.addr_off(id_addr_off),
+		.jump_type_o(id_jump_type),
+		.stall_req(id_stallreq)
     );
-	assign ex_wdata = ex_wdata_o;
-	assign ex_wd = ex_wd_o;
-	assign ex_wreg = ex_wreg_o; 
-
-	//	mem -> id
-	assign mem_wdata = mem_wdata_o;
-	assign mem_wd = mem_wd_o;
-	assign mem_wreg = mem_wreg_o;
     
     //  id_ex
     id_ex id_ex0(
         .clk(clk),
         .rst(rst),
-        .id_aluop(id_aluop_o),
-        .id_alusel(id_alusel_o),
-        .id_reg1(id_reg1_o),
-        .id_reg2(id_reg2_o),
-        .id_wd(id_wd_o),
-        .id_wreg(id_wreg_o),
-        .ex_aluop(ex_aluop_i),
-        .ex_alusel(ex_alusel_i),
-        .ex_reg1(ex_reg1_i),
-        .ex_reg2(ex_reg2_i),
-        .ex_wd(ex_wd_i),
-        .ex_wreg(ex_wreg_i)
+		.stall(ctrl_stall),
+        .id_aluop(id_aluop),
+        .id_alusel(id_alusel),
+        .id_reg1(id_reg1),
+        .id_reg2(id_reg2),
+        .id_wd(id_wd),
+        .id_wreg(id_wreg),
+		.id_addr_base(id_addr_base),
+		.id_addr_off(id_addr_off),
+		.id_jump_type(id_jump_type),
+        .ex_aluop(idex_aluop),
+        .ex_alusel(idex_alusel),
+        .ex_reg1(idex_reg1),
+        .ex_reg2(idex_reg2),
+        .ex_wd(idex_wd),
+        .ex_wreg(idex_wreg),
+		.ex_addr_base(idex_addr_base),
+		.ex_addr_off(idex_addr_off),
+		.jump_type_o(idex_jump_type)
     );
     
     //  ex
     ex ex0(
         .rst(rst),
-        .aluop_i(ex_aluop_i),
-        .alusel_i(ex_alusel_i),
-        .reg1_i(ex_reg1_i),
-        .reg2_i(ex_reg2_i),
-        .wd_i(ex_wd_i),
-        .wreg_i(ex_wreg_i),
-        .wdata_o(ex_wdata_o),
-        .wd_o(ex_wd_o),
-        .wreg_o(ex_wreg_o)
+        .aluop_i(idex_aluop),
+        .alusel_i(idex_alusel),
+        .reg1_i(idex_reg1),
+        .reg2_i(idex_reg2),
+        .wd_i(idex_wd),
+        .wreg_i(idex_wreg),
+		.addr_base(idex_addr_base),
+		.addr_off(idex_addr_off),
+		.jump_type_i(idex_jump_type),
+        .wdata_o(ex_wdata),
+        .wd_o(ex_wd),
+        .wreg_o(ex_wreg),
+		.addr_o(ex_addr)
     );
     
     //  ex_mem
     ex_mem ex_mem0(
         .clk(clk),
         .rst(rst),
-        .ex_wdata(ex_wdata_o),
-        .ex_wd(ex_wd_o),
-        .ex_wreg(ex_wreg_o),
-        .mem_wdata(mem_wdata_i),
-        .mem_wd(mem_wd_i),
-        .mem_wreg(mem_wreg_i)
+		.stall(ctrl_stall),
+        .ex_wdata(ex_wdata),
+        .ex_wd(ex_wd),
+        .ex_wreg(ex_wreg),
+        .mem_wdata(exmem_wdata),
+        .mem_wd(exmem_wd),
+        .mem_wreg(exmem_wreg)
     );
     
     //  mem
     mem mem0(
         .rst(rst),
-        .wdata_i(mem_wdata_i),
-        .wd_i(mem_wd_i),
-        .wreg_i(mem_wreg_i),
-        .wdata_o(mem_wdata_o),
-        .wd_o(mem_wd_o),
-        .wreg_o(mem_wreg_o)
+        .wdata_i(exmem_wdata),
+        .wd_i(exmem_wd),
+        .wreg_i(exmem_wreg),
+        .wdata_o(mem_wdata),
+        .wd_o(mem_wd),
+        .wreg_o(mem_wreg)
     );
     
     //  mem_wb
     mem_wb mem_wb(
         .clk(clk),
         .rst(rst),
-        .mem_wdata(mem_wdata_o),
-        .mem_wd(mem_wd_o),
-        .mem_wreg(mem_wreg_o),
-        .wb_wdata(wb_wdata_i),
-        .wb_wd(wb_wd_i),
-        .wb_wreg(wb_wreg_i)
+		.stall(ctrl_stall),
+        .mem_wdata(mem_wdata),
+        .mem_wd(mem_wd),
+        .mem_wreg(mem_wreg),
+        .wb_wdata(memwb_wdata),
+        .wb_wd(memwb_wd),
+        .wb_wreg(memwb_wreg)
     );
     
     //  regfile
     regfile regfile0(
         .clk(clk),
         .rst(rst),
-        .wdata(wb_wdata_i),
-        .waddr(wb_wd_i),
-        .we(wb_wreg_i),
-        .rdata1(reg1_data),
-        .rdata2(reg2_data),
-        .re1(reg1_read),
-        .re2(reg2_read),
-        .raddr1(reg1_addr),
-        .raddr2(reg2_addr)
+		.stall(ctrl_stall),
+        .we(memwb_wreg),
+        .waddr(memwb_wd),
+        .wdata(memwb_wdata),
+        .re1(id_reg1_read),
+        .raddr1(id_reg1_addr),
+        .rdata1(reg_reg1_data),
+        .re2(id_reg2_read),
+        .raddr2(id_reg2_addr),
+        .rdata2(reg_reg2_data)
     );
+
+	//	ctrl
+	ctrl ctrl0(
+		.rst(rst),
+		.id_req(id_stallreq),
+		.stall(ctrl_stall)
+	);
 endmodule

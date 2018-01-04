@@ -12,12 +12,15 @@ module id(
 		input wire[`RegDataWidth-1:0] reg1_data_i,
 		input wire[`RegDataWidth-1:0] reg2_data_i,
 
-		//	read from ex
+		//	read from mem
 		input wire[`RegDataWidth-1:0] mem_wdata_i,
 		input wire[`RegAddrWidth-1:0] mem_wd_i,
 		input wire mem_wreg_i,
 
-		//	read from mem
+		//	read from id_ex
+		input wire[1:0] jump_type_i,
+
+		//	read from ex
 		input wire[`RegDataWidth-1:0] ex_wdata_i,
 		input wire[`RegAddrWidth-1:0] ex_wd_i,
 		input wire ex_wreg_i,
@@ -34,7 +37,13 @@ module id(
 		output reg[`RegDataWidth-1:0] reg1_o,
 		output reg[`RegDataWidth-1:0] reg2_o,
 		output reg[`RegAddrWidth-1:0] wd_o,
-		output reg	wreg_o
+		output reg	wreg_o,
+		output reg[`RegDataWidth-1:0] addr_base,
+		output reg[`RegDataWidth-1:0] addr_off,
+		output reg[1:0] jump_type_o,
+
+		//	output to ctrl
+		output reg stall_req
 	);
 
 	wire[6:0] opcode = inst_i[6:0];
@@ -43,7 +52,8 @@ module id(
 
 	reg[1:0] reg1_type;
 	reg[1:0] reg2_type;
-
+	reg[1:0] addr_base_type;
+	
 	reg[`RegDataWidth-1:0] imm;
 
 	reg inst_valid;
@@ -59,11 +69,16 @@ module id(
 			inst_valid <= `InstValid;
 			reg1_type <= `DataZero;
 			reg2_type <= `DataZero;
+			addr_base_type <= `DataZero;
 			reg1_read_o <= `ChipDisable;
 			reg2_read_o <= `ChipDisable;
 			reg1_addr_o <= `ZeroRegAddr;
 			reg2_addr_o <= `ZeroRegAddr;
 			imm <= 32'b0;
+			addr_base <= `ZeroWord;
+			addr_off  <= `ZeroWord;
+			jump_type_o <= `NoJump;
+			stall_req <= `NoRequestStall;
 		end else begin
 			aluop_o <= `EXE_NOP_OP;
 			alusel_o <= `EXE_NOP_RES;
@@ -72,11 +87,17 @@ module id(
 			inst_valid <= `InstValid;
 			reg1_type <= `DataZero;
 			reg2_type <= `DataZero;
+			addr_base_type <= `DataZero;
 			reg1_read_o <= `ChipDisable;
 			reg2_read_o <= `ChipDisable;
 			reg1_addr_o <= `ZeroRegAddr;
 			reg2_addr_o <= `ZeroRegAddr;
 			imm <= `ZeroWord;
+			addr_base <= `ZeroWord;
+			addr_off  <= `ZeroWord;
+			jump_type_o <= `NoJump;
+			stall_req <= `NoRequestStall;
+
 			case (opcode)
 				`OP_OP_IMM: begin
 					wd_o <= inst_i[11:7];
@@ -207,6 +228,89 @@ module id(
 					aluop_o <= `EXE_ADD_OP;
 					alusel_o <= `EXE_ARITH_RES;
 				end
+				`OP_BRANCH: begin
+					if (jump_type_i != `NoJump) begin
+						//	default nop instruction
+					end else begin
+						jump_type_o <= `JumpBranch;
+						addr_base_type <= `DataPC;
+						addr_off <= {{20{inst_i[31]}},inst_i[7],inst_i[30:25],inst_i[11:8],1'b0};
+						reg1_type <= `DataReg;
+						reg2_type <= `DataReg;
+						reg1_read_o <= `ReadEnable;
+						reg2_read_o <= `ReadEnable;
+						reg1_addr_o <= inst_i[19:15];
+						reg2_addr_o <= inst_i[24:20];
+						wreg_o <= `WriteDisable;
+						wd_o <= `ZeroRegAddr;
+						stall_req <= `RequestStall;
+						case (funct3) 
+							`FUNCT3_BEQ: begin
+								aluop_o <= `EXE_SEQ_OP;
+								alusel_o <= `EXE_ARITH_RES;
+							end
+							`FUNCT3_BNE: begin
+								aluop_o <= `EXE_SNE_OP;
+								alusel_o <= `EXE_ARITH_RES;
+							end
+							`FUNCT3_BLT: begin
+								aluop_o <= `EXE_SLT_OP;
+								alusel_o <= `EXE_ARITH_RES;
+							end
+							`FUNCT3_BGE: begin
+								aluop_o <= `EXE_SGE_OP;
+								alusel_o <= `EXE_ARITH_RES;
+							end
+							`FUNCT3_BLTU: begin
+								aluop_o <= `EXE_SLTU_OP;
+								alusel_o <= `EXE_ARITH_RES;
+							end
+							`FUNCT3_BGEU: begin
+								aluop_o <= `EXE_SGEU_OP;
+								alusel_o <= `EXE_ARITH_RES;
+							end
+							default: begin
+								inst_valid <= `InstInvalid;
+							end
+						endcase
+					end
+				end
+				`OP_JAL: begin
+					if (jump_type_i != `NoJump) begin
+						//	default nop instruction
+					end else begin
+						jump_type_o <= `JumpUncdt;
+						addr_base_type <= `DataPC;
+						addr_off <= {{12{inst_i[31]}},inst_i[19:12],inst_i[20],inst_i[30:21],1'b0};
+						reg1_type <= `DataPC;
+						reg2_type <= `DataImm;
+						imm <= 32'd4;
+						wreg_o <= `WriteEnable;
+						wd_o <= inst_i[11:7];
+						stall_req <= `RequestStall;
+						aluop_o <= `EXE_ADD_OP;
+						alusel_o <= `EXE_ARITH_RES;
+					end
+				end
+				`OP_JALR: begin
+					if (jump_type_i != `NoJump) begin
+						//	default nop instruction
+					end else begin
+						jump_type_o <= `JumpUncdt;
+						addr_base_type <= `DataReg;
+						reg1_read_o <= `ReadEnable;
+						reg1_addr_o <= inst_i[19:15];
+						addr_off <= {{20{inst_i[31]}},inst_i[31:20]};
+						reg1_type <= `DataPC;
+						reg2_type <= `DataImm;
+						imm <= 32'd4;
+						wreg_o <= `WriteEnable;
+						wd_o <= inst_i[11:7];
+						stall_req <= `RequestStall;
+						aluop_o <= `EXE_ADD_OP;
+						alusel_o <= `EXE_ARITH_RES;
+					end
+				end
 				default:
 				begin
 					inst_valid <= `InstInvalid;
@@ -259,6 +363,30 @@ module id(
 			reg2_o <= pc_i;
 		end else begin
 			reg2_o <= `ZeroWord;
+		end
+	end
+
+	//	decide addr_base
+	always @ (*)
+	begin
+		if (rst == `RstEnable) begin
+			addr_base <= `ZeroWord;
+		end else if (addr_base_type == `DataReg) begin
+			if ( ex_wreg_i == `WriteEnable 
+			  && ex_wd_i == reg1_addr_o) begin
+				addr_base <= ex_wdata_i;
+			end else if ( mem_wreg_i == `WriteEnable
+			      && mem_wd_i == reg1_addr_o) begin
+				addr_base <= mem_wdata_i;
+			end else begin
+				addr_base <= reg1_data_i;
+			end
+		end else if (addr_base_type == `DataImm) begin
+			addr_base <= imm;
+		end else if (addr_base_type == `DataPC) begin
+			addr_base <= pc_i;
+		end else begin
+			addr_base <= `ZeroWord;
 		end
 	end
 endmodule

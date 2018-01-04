@@ -2,15 +2,13 @@ TOOL_CHAIN = /opt/riscv/bin
 COMPLIE = $(TOOL_CHAIN)/riscv32-unknown-elf-
 INCLUDE_DIR = .
 SOURSE_DIR = 
-SOURSES =    $(SOURSE_DIR)pc_reg.v \
-			 $(SOURSE_DIR)if_id.v  \
+SOURSES =    $(SOURSE_DIR)ctrl.v   \
+			 $(SOURSE_DIR)pc_reg.v \
 			 $(SOURSE_DIR)id.v     \
-			 $(SOURSE_DIR)id_ex.v  \
 			 $(SOURSE_DIR)ex.v     \
-			 $(SOURSE_DIR)ex_mem.v \
 			 $(SOURSE_DIR)mem.v    \
-			 $(SOURSE_DIR)mem_wb.v \
 			 $(SOURSE_DIR)memory.v \
+			 $(SOURSE_DIR)midbuf.v \
 			 $(SOURSE_DIR)regfile.v \
 			 $(SOURSE_DIR)risc32i.v \
 			 $(SOURSE_DIR)sopc.v    \

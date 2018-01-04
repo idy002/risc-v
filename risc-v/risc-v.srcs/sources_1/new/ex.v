@@ -11,11 +11,17 @@ module ex(
 		input wire[`RegDataWidth-1:0] reg2_i,
 		input wire[`RegAddrWidth-1:0] wd_i,
 		input wire wreg_i,
+		input wire[`RegDataWidth-1:0] addr_base,
+		input wire[`RegDataWidth-1:0] addr_off,
+		input wire[1:0] jump_type_i,
 		
 		//	output to ex_mem
-		output reg[`RegDataWidth-1:0] wdata_o,
+		//	wdata_o and addr_o also to if_id and pc_reg
+		output reg[`RegDataWidth-1:0] wdata_o,	
 		output reg[`RegAddrWidth-1:0] wd_o,
-		output reg wreg_o
+		output reg wreg_o,
+		output reg[`RegDataWidth-1:0] addr_o
+		
 	);
 	
 	reg[`RegDataWidth-1:0] logicout;
@@ -29,19 +35,37 @@ module ex(
 	wire reg1_lt_reg2;
 
 	assign sub_res = reg1_i + (~reg2_i) + 1;
-	assign reg1_lt_reg2 = (aluop_i == `EXE_SLT_OP ?
+	assign reg1_eq_reg2 = (reg1_i == reg2_i);
+	assign reg1_lt_reg2 = (aluop_i == `EXE_SLT_OP || aluop_i == `EXE_SGE_OP ?
 					(   (reg1_i[31] && !reg2_i[31]) 
 					 || (reg1_i[31] && reg2_i[31] && sub_res[31])
 					 || (!reg1_i[31] && !reg2_i[31] && sub_res[31])
 					) : (reg1_i < reg2_i));
 
 
+	//	calculate the address
+	always @ (*) 
+	begin
+		if (rst == `RstEnable) begin
+			addr_o <= `ZeroWord;
+		end else if (jump_type_i != `NoJump) begin
+			addr_o <= addr_base + addr_off;
+		end else begin
+			addr_o <= `ZeroWord;
+		end
+	end
+
 	//	do the calculation and store the result to corresponding output reg
 	always @ (*) 
 	begin
 		if (rst == `RstEnable) begin
 			logicout <= `ZeroWord;
+			arithout <= `ZeroWord;
+			shiftout <= `ZeroWord;
 		end else begin
+			logicout <= `ZeroWord;
+			arithout <= `ZeroWord;
+			shiftout <= `ZeroWord;
 			case (aluop_i)
 				`EXE_OR_OP: begin
 					logicout <= reg1_i | reg2_i;
@@ -77,8 +101,17 @@ module ex(
 					shiftout <= (reg1_i >> reg2_i[4:0])
 							  | ({32{reg1_i[31]}} << (6'd32 - {1'b0, reg2_i[4:0]}));
 				end
-				default: begin
-					logicout <= `ZeroWord;
+				`EXE_SEQ_OP: begin
+					arithout <= {31'b0, reg1_eq_reg2};
+				end
+				`EXE_SNE_OP: begin
+					arithout <= {31'b0, !reg1_eq_reg2};
+				end
+				`EXE_SGE_OP: begin
+					arithout <= {31'b0, !reg1_lt_reg2};
+				end
+				`EXE_SGEU_OP: begin
+					arithout <= {31'b0, !reg1_lt_reg2};
 				end
 			endcase
 		end

@@ -5,6 +5,7 @@
 module mem_wb(
         input wire clk,
         input wire rst,
+		input wire[5:0] stall,
         
         //  input from mem
         input wire[`RegDataWidth-1:0] mem_wdata,
@@ -23,7 +24,7 @@ module mem_wb(
             wb_wdata <= `ZeroWord;
             wb_wd <= `ZeroRegAddr;
             wb_wreg <= `WriteDisable;
-        end else begin
+        end else if(!stall[4]) begin
             wb_wdata <= mem_wdata;
             wb_wd <= mem_wd;
             wb_wreg <= mem_wreg;

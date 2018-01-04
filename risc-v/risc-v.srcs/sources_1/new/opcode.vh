@@ -85,6 +85,10 @@
 `define EXE_SLL_OP   5'd8
 `define EXE_SRL_OP   5'd9
 `define EXE_SRA_OP   5'd10
+`define EXE_SEQ_OP	 5'd11
+`define EXE_SNE_OP	 5'd12
+`define EXE_SGE_OP	 5'd13
+`define EXE_SGEU_OP	 5'd14
 
 //
 // vim:filetype=verilog:

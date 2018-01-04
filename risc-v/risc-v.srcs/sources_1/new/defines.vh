@@ -4,10 +4,10 @@
 //
 //  global definitions
 //
-//`define MemFile         "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/inst.mem"
-//`define WaveFile        "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
-`define MemFile         "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/inst.mem"
-`define WaveFile        "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
+`define MemFile         "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/inst.mem"
+`define WaveFile        "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
+//`define MemFile         "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/inst.mem"
+//`define WaveFile        "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
 `define ChipEnable      1'b1
 `define ChipDisable     1'b0
 `define RstEnable       1'b1
@@ -15,6 +15,7 @@
 `define MemAddrWidth    32
 `define InstWidth       32
 `define ZeroWord        32'h00000000
+`define NopInst			32'h00006013
 
 //
 //  memory
@@ -44,6 +45,11 @@
 `define DataImm			2'd1
 `define DataPC			2'd2
 `define DataReg			2'd3
+`define RequestStall	1'b1
+`define NoRequestStall	1'b0
+`define NoJump			2'b00
+`define JumpUncdt		2'b01
+`define JumpBranch		2'b10
 
 //
 //  ex(execusion)

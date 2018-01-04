@@ -4,6 +4,7 @@
 module ex_mem(
         input wire clk,
         input wire rst,
+		input wire[5:0] stall,
         
         //  input from ex
         input wire[`RegDataWidth-1:0] ex_wdata,
@@ -22,7 +23,7 @@ module ex_mem(
             mem_wdata <= `ZeroWord;
             mem_wd <= `ZeroRegAddr;
             mem_wreg <= `WriteDisable;
-        end else begin
+        end else if (!stall[3]) begin
             mem_wdata <= ex_wdata;
             mem_wd <= ex_wd;
             mem_wreg <= ex_wreg;
