@@ -1,0 +1,49 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Fri Jan  5 03:06:19 2018
+[*]
+[dumpfile] "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/experiment/dump.vcd"
+[dumpfile_mtime] "Fri Jan  5 03:01:25 2018"
+[dumpfile_size] 8900
+[savefile] "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/experiment/wave.gtkw"
+[timestart] 0
+[size] 1842 1053
+[pos] -1 -1
+*-17.188389 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] sopc.
+[sst_width] 273
+[signals_width] 182
+[sst_expanded] 1
+[sst_vpaned_height] 317
+@28
+sopc.agent1.CLK
+@20000
+-
+@28
+sopc.agent1.Rx
+sopc.agent1.Tx
+sopc.agent1.receivable
+sopc.agent1.recv_flag
+@22
+sopc.agent1.recv_data[7:0]
+@28
+sopc.agent1.sendable
+sopc.agent1.send_flag
+@22
+sopc.agent1.send_data[7:0]
+@20000
+-
+@28
+sopc.agent2.Rx
+sopc.agent2.Tx
+sopc.agent2.receivable
+sopc.agent2.recv_flag
+@22
+sopc.agent2.recv_data[7:0]
+@28
+sopc.agent2.sendable
+sopc.agent2.send_flag
+@22
+sopc.agent2.send_data[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

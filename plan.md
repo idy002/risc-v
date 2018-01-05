@@ -1,16 +1,16 @@
 # Plan
 
 ### Current Progress
-- [ ] LUI
-- [ ] AUIPC
-- [ ] JAL
-- [ ] JALR
-- [ ] BEQ
-- [ ] BNE
-- [ ] BLT
-- [ ] BGE
-- [ ] BLTU
-- [ ] BGEU
+- [x] LUI
+- [x] AUIPC
+- [x] JAL
+- [x] JALR
+- [x] BEQ
+- [x] BNE
+- [x] BLT
+- [x] BGE
+- [x] BLTU
+- [x] BGEU
 - [ ] LB
 - [ ] LH
 - [ ] LW
@@ -19,25 +19,25 @@
 - [ ] SB
 - [ ] SH
 - [ ] SW
-- [ ] ADDI
-- [ ] SLTI
-- [ ] SLTIU
-- [ ] XORI
+- [x] ADDI
+- [x] SLTI
+- [x] SLTIU
+- [x] XORI
 - [x] ORI
-- [ ] ANDI
-- [ ] SLLI
-- [ ] SRLI
-- [ ] SRAI
-- [ ] ADD
-- [ ] SUB
-- [ ] SLL
-- [ ] SLT
-- [ ] SLTU
-- [ ] XOR
-- [ ] SRL
-- [ ] SRA
-- [ ] OR
-- [ ] AND
+- [x] ANDI
+- [x] SLLI
+- [x] SRLI
+- [x] SRAI
+- [x] ADD
+- [x] SUB
+- [x] SLL
+- [x] SLT
+- [x] SLTU
+- [x] XOR
+- [x] SRL
+- [x] SRA
+- [x] OR
+- [x] AND
 - [ ] FENCE
 - [ ] FENCE.I
 

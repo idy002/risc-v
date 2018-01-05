@@ -1,6 +1,5 @@
 `include "opcode.vh"
 
-
 //
 //  global definitions
 //
@@ -15,14 +14,47 @@
 `define MemAddrWidth    32
 `define InstWidth       32
 `define ZeroWord        32'h00000000
+`define ZeroByte		8'h00
 `define NopInst			32'h00006013
 
 //
 //  memory
 //
+//  28      =  11   +  13   +   4
+//  addr       tag     index    disp
+//
 `define MemDataWidth    8
 `define MemNum          1024
 `define MemNumLog2      10
+`define CacheDispWidth	4
+`define CacheIndexWidth	12
+`define CacheTagWidth	12
+`define CacheDispPos	(`CacheDispWidth-1):0
+`define CacheIndexPos	(`CacheIndexWidth + `CacheDispWidth - 1) : (`CacheDispWidth)
+`define CacheTagPos		27 : (`CacheIndexWidth + `CacheDispWidth)
+`define CacheLineBits	(1 + 12 +  16 * 8)	//	1 + 8 + 2^6 * 8
+`define CacheLineNum	(4096)		//	2^12
+`define BlockBytes		16
+`define BlockWidth		(16 * 8)
+`define BlockAddrWidth	(`CacheTagWidth + `CacheIndexWidth)
+`define ZeroBlock		{`BlockWidth{1'b0}}
+`define ZeroDataDisp	{(`CacheDispWidth){1'b0}}
+`define FullDataDisp	{(`CacheDispWidth){1'b1}}
+`define ZeroHeadDisp	2'b00
+`define FullHeadDisp	2'b11
+`define ReadOpHead		{(32-`BlockAddrWidth){1'b0}}
+`define WriteOpHead		{(32-`BlockAddrWidth){1'b1}}
+`define MemRead			1'b0
+`define MemWrite		1'b1
+`define MemAddrWidth	32
+`define IsBusy			1'b1
+`define NotBusy			1'b0
+`define SendEnable		1'b1
+`define SendDisable		1'b0
+`define RecvEnable		1'b1
+`define RecvDisable		1'b0
+`define TransAddr		1'b0
+`define TransData		1'b1
 
 //
 //  regfile

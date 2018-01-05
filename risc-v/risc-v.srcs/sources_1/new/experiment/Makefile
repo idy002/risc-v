@@ -2,19 +2,9 @@ TOOL_CHAIN = /opt/riscv/bin
 COMPLIE = $(TOOL_CHAIN)/riscv32-unknown-elf-
 INCLUDE_DIR = .
 SOURSE_DIR = 
-SOURSES =    $(SOURSE_DIR)ctrl.v   \
-			 $(SOURSE_DIR)pc_reg.v \
-			 $(SOURSE_DIR)id.v     \
-			 $(SOURSE_DIR)ex.v     \
-			 $(SOURSE_DIR)mem.v    \
-			 $(SOURSE_DIR)midbuf.v \
-			 $(SOURSE_DIR)regfile.v \
-			 $(SOURSE_DIR)risc32i.v \
-			 $(SOURSE_DIR)cache.v \
-			 $(SOURSE_DIR)sopc.v    \
-			 $(SOURSE_DIR)sopc_tb.v \
-			 $(SOURSE_DIR)defines.vh \
-			 $(SOURSE_DIR)opcode.vh
+SOURSES =    $(SOURSE_DIR)sopc.v   \
+			 $(SOURSE_DIR)uart_comm.v \
+			 $(SOURSE_DIR)fifo.v 
 
 start : 
 	@echo "Hello, ding!"
@@ -26,7 +16,7 @@ wave : dump.vcd
 	#   --   Show wave   --
 	gtkwave dump.vcd &
 
-dump.vcd : sopc inst.mem
+dump.vcd : sopc
 	#   --   Simulate   --
 	vvp sopc > /dev/null
 

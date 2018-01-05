@@ -18,11 +18,16 @@ module sopc(
         .memory_data_i(inst)
     );
 
+	memory_ctrl memory_ctrl0(
+		
+	);
+	/*
     memory memory0(
         .ce(memory_ce),
         .addr(inst_addr),
         .inst(inst)
     );
+	*/
 
     //  test atom
 
