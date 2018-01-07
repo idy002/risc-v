@@ -54,6 +54,9 @@ module id_ex(
 		input wire[`RegDataWidth-1:0]	id_addr_base,
 		input wire[`RegDataWidth-1:0]	id_addr_off,
 		input wire[1:0] id_jump_type,
+		input wire id_wait_reg,
+		input wire[1:0] memop_i,
+		input wire[2:0] memfunct_i,
 		
 		//	output to ex
 		output reg[`AluOpWidth-1:0]		ex_aluop,
@@ -64,10 +67,14 @@ module id_ex(
 		output reg ex_wreg,
 		output reg[`RegDataWidth-1:0]	ex_addr_base,
 		output reg[`RegDataWidth-1:0]	ex_addr_off,
+		output reg[1:0] memop_o,
+		output reg[2:0] memfunct_o,
 
 		//	output to ex, pc_reg, if_id, id
-		output reg[1:0] jump_type_o
-		
+		output reg[1:0] jump_type_o,
+
+		//	output to id
+		output reg wait_reg_o
 	);
 	always @ (posedge clk)
 	begin
@@ -81,6 +88,9 @@ module id_ex(
 			ex_addr_base <= `ZeroWord;
 			ex_addr_off	<=	`ZeroWord;
 			jump_type_o	<=	`NoJump;
+			wait_reg_o <=	`NoWait;
+			memop_o		<=	`MEM_NOP;
+			memfunct_o  <=	0;
 		end else if(!stall[2]) begin
 			ex_aluop	<=	id_aluop;
 			ex_alusel	<=	id_alusel;
@@ -91,6 +101,9 @@ module id_ex(
 			ex_addr_base <= id_addr_base;
 			ex_addr_off	<=	id_addr_off;
 			jump_type_o	<=	id_jump_type;
+			wait_reg_o <=	id_wait_reg;
+			memop_o		<=	memop_i;
+			memfunct_o  <=	memfunct_i;
 		end 
 	end
 	
@@ -105,11 +118,17 @@ module ex_mem(
         input wire[`RegDataWidth-1:0] ex_wdata,
         input wire[`RegAddrWidth-1:0] ex_wd,
         input wire ex_wreg,
+		input wire[`MemAddrWidth-1:0] ex_addr,
+		input wire[1:0] memop_i,
+		input wire[2:0] memfunct_i,
         
         //  output to mem
         output reg[`RegDataWidth-1:0] mem_wdata,            
         output reg[`RegAddrWidth-1:0] mem_wd,               
-        output reg mem_wreg                   
+        output reg mem_wreg,
+		output reg[`MemAddrWidth-1:0] mem_addr,
+		output reg[1:0] memop_o,
+		output reg[2:0] memfunct_o
     );
     
     always @ (posedge clk) 
@@ -118,10 +137,16 @@ module ex_mem(
             mem_wdata <= `ZeroWord;
             mem_wd <= `ZeroRegAddr;
             mem_wreg <= `WriteDisable;
+			mem_addr <= `ZeroWord;
+			memop_o <= 0;
+			memfunct_o <= 0;
         end else if (!stall[3]) begin
             mem_wdata <= ex_wdata;
             mem_wd <= ex_wd;
             mem_wreg <= ex_wreg;
+			mem_addr <= ex_addr;
+			memop_o <= memop_i;
+			memfunct_o <= memfunct_i;
         end
     end
 endmodule

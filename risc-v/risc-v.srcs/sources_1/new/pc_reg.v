@@ -21,7 +21,7 @@ module pc_reg(
         if (rst == `RstEnable) 
         begin
             ce <= `ChipDisable;
-            pc <= 32'h00000000;
+            pc <= 32'hFFFFFFFC;
 		end else if (!stall[0]) begin
 			if (idex_jump_type == `JumpUncdt 
 				|| (idex_jump_type == `JumpBranch && ex_jump)) begin

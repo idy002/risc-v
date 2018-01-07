@@ -1,9 +1,9 @@
 //  opcode
 `define OP_LUI      7'b0110111  // Finish
 `define OP_AUIPC    7'b0010111	// Finish
-`define OP_JAL      7'b1101111
-`define OP_JALR     7'b1100111
-`define OP_BRANCH   7'b1100011
+`define OP_JAL      7'b1101111	// Finish
+`define OP_JALR     7'b1100111	// Finish
+`define OP_BRANCH   7'b1100011  // Finish
 `define OP_LOAD     7'b0000011
 `define OP_STORE    7'b0100011
 `define OP_OP_IMM   7'b0010011	// Finish
@@ -89,6 +89,11 @@
 `define EXE_SNE_OP	 5'd12
 `define EXE_SGE_OP	 5'd13
 `define EXE_SGEU_OP	 5'd14
+
+//	code for mem
+`define MEM_NOP		2'b00
+`define MEM_STORE	2'b01
+`define MEM_LOAD	2'b10
 
 //
 // vim:filetype=verilog:

@@ -22,6 +22,9 @@ start :
 edit : 
 	vim -p $(SOURSES) inst.S
 
+%.S : %.c
+	$(COMPLIE)gcc -S -o $@ $<
+
 wave : dump.vcd
 	#   --   Show wave   --
 	gtkwave dump.vcd &
@@ -45,8 +48,8 @@ sopc : $(SOURSES)
 %.mem : %.om
 	#   --   Complie Instruction   --
 	$(COMPLIE)objcopy -O verilog $< $@
-	sed -i '1s/^.*$$/00 00 00 00/' $@
-	
+	#	sed -i '1s/^.*$$/00 00 00 00/' $@
+	sed -i '1d' $@
 
 clean : 
 	rm -f *.o *.om *.mem wave.vcd sopc 

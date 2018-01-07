@@ -12,16 +12,13 @@ module sopc(
 
     risc32i risc32i0(
         .clk(clk),
-        .rst(rst),
-        .memory_addr_o(inst_addr),
-        .memory_ce_o(memory_ce),
-        .memory_data_i(inst)
+        .rst(rst)
     );
 
+	/*
 	memory_ctrl memory_ctrl0(
 		
 	);
-	/*
     memory memory0(
         .ce(memory_ce),
         .addr(inst_addr),

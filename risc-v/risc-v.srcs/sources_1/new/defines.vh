@@ -3,10 +3,10 @@
 //
 //  global definitions
 //
-`define MemFile         "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/inst.mem"
-`define WaveFile        "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
-//`define MemFile         "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/inst.mem"
-//`define WaveFile        "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
+//`define MemFile         "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/inst.mem"
+//`define WaveFile        "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
+`define MemFile         "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/inst.mem"
+`define WaveFile        "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
 `define ChipEnable      1'b1
 `define ChipDisable     1'b0
 `define RstEnable       1'b1
@@ -16,6 +16,9 @@
 `define ZeroWord        32'h00000000
 `define ZeroByte		8'h00
 `define NopInst			32'h00006013
+`define Yes				1'b1
+`define No				1'b0
+
 
 //
 //  memory
@@ -61,6 +64,7 @@
 //
 `define RegAddrWidth    5
 `define RegDataWidth    32
+`define RegDataBytes	4
 `define RegNum          32
 `define WriteEnable     1'b1
 `define WriteDisable    1'b0
@@ -82,6 +86,8 @@
 `define NoJump			2'b00
 `define JumpUncdt		2'b01
 `define JumpBranch		2'b10
+`define NoWait			1'b0
+`define WaitReg			1'b1
 
 //
 //  ex(execusion)

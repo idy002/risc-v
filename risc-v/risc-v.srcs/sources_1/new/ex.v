@@ -14,14 +14,17 @@ module ex(
 		input wire[`RegDataWidth-1:0] addr_base,
 		input wire[`RegDataWidth-1:0] addr_off,
 		input wire[1:0] jump_type_i,
+		input wire[1:0] memop_i,
+		input wire[2:0] memfunct_i,
 		
 		//	output to ex_mem
 		//	wdata_o and addr_o also to if_id and pc_reg
 		output reg[`RegDataWidth-1:0] wdata_o,	
 		output reg[`RegAddrWidth-1:0] wd_o,
 		output reg wreg_o,
-		output reg[`RegDataWidth-1:0] addr_o
-		
+		output reg[`RegDataWidth-1:0] addr_o,
+		output reg[1:0] memop_o,
+		output reg[2:0] memfunct_o
 	);
 	
 	reg[`RegDataWidth-1:0] logicout;
@@ -48,7 +51,7 @@ module ex(
 	begin
 		if (rst == `RstEnable) begin
 			addr_o <= `ZeroWord;
-		end else if (jump_type_i != `NoJump) begin
+		end else if (jump_type_i != `NoJump || memop_o != `MEM_NOP) begin
 			addr_o <= addr_base + addr_off;
 		end else begin
 			addr_o <= `ZeroWord;
@@ -122,6 +125,8 @@ module ex(
 	begin
 		wd_o <= wd_i;
 		wreg_o <= wreg_i;
+		memop_o <= memop_i;
+		memfunct_o <= memfunct_i;
 		case (alusel_i)
 			`EXE_LOGIC_RES: begin
 				wdata_o <= logicout;

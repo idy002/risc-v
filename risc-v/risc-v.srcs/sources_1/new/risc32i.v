@@ -6,12 +6,8 @@ module risc32i(
         input wire clk,
         input wire rst,
         
-        //  input from memory
-        input wire[`RegDataWidth-1:0] memory_data_i,
-        
-        //  output to memory
-        output wire[`MemAddrWidth-1:0] memory_addr_o,
-        output wire memory_ce_o
+		output Tx,
+		input Rx
     );
     
     //  pc_reg outputs
@@ -36,6 +32,9 @@ module risc32i(
 	wire[`RegDataWidth-1:0] id_addr_base;
 	wire[`RegDataWidth-1:0] id_addr_off;
 	wire[1:0] id_jump_type;
+	wire	id_wait_reg;
+	wire[1:0] id_memop;
+	wire[2:0] id_memfunct;
 	wire id_stallreq;
 
 	//	regfile outputs
@@ -51,20 +50,33 @@ module risc32i(
     wire idex_wreg;   
 	wire[`RegDataWidth-1:0]  idex_addr_base;
 	wire[`RegDataWidth-1:0]  idex_addr_off;
+	wire[1:0] idex_memop;
+	wire[2:0] idex_memfunct;
 	wire[1:0] idex_jump_type;
+	wire	  idex_wait_reg;
     
     //  ex outputs
     wire[`RegDataWidth-1:0] ex_wdata; 
     wire[`RegAddrWidth-1:0] ex_wd;    
     wire ex_wreg;                      
 	wire[`RegDataWidth-1:0] ex_addr;
+	wire[1:0] ex_memop;
+	wire[2:0] ex_memfunct;
     
     //  ex_mem outputs
     wire[`RegDataWidth-1:0] exmem_wdata;   
     wire[`RegAddrWidth-1:0] exmem_wd;      
     wire exmem_wreg;
+	wire[`MemAddrWidth-1:0] exmem_addr;
+	wire[1:0] exmem_memop;
+	wire[2:0] exmem_memfunct;
                             
     //  mem outputs
+	wire mem_data_ce;
+	wire mem_data_optype;
+	wire[`MemAddrWidth-1:0] mem_data_addr;
+	wire[`RegDataWidth-1:0] mem_write_data_value;
+	wire[`RegDataBytes-1:0] mem_write_data_mask;
     wire[`RegDataWidth-1:0] mem_wdata; 
     wire[`RegAddrWidth-1:0] mem_wd;    
     wire mem_wreg;                    
@@ -77,7 +89,13 @@ module risc32i(
 	//	ctrl outputs
 	wire[5:0] ctrl_stall;
 
-    
+	//	cache outputs
+	wire[`RegDataWidth-1:0] cache_inst_value;
+	wire[`RegDataWidth-1:0] cache_read_data_value;
+	wire cache_busy;
+	wire cache_Tx;
+	wire cache_Rx;
+
     //  pc_reg
     pc_reg pc_reg0(
         .clk(clk), 
@@ -89,8 +107,6 @@ module risc32i(
         .pc(pcreg_pc), 
         .ce(pcreg_ce)
     );
-	assign memory_ce_o = pcreg_ce;
-    assign memory_addr_o = pcreg_pc;
     
     //  if_id
     if_id if_id0(
@@ -98,7 +114,7 @@ module risc32i(
         .rst(rst),
 		.stall(ctrl_stall),
         .if_pc(pcreg_pc),
-        .if_inst(memory_data_i),
+        .if_inst(cache_inst_value),
 		.ex_jump(ex_wdata[0]),
 		.idex_jump_type(idex_jump_type),
         .id_pc(ifid_pc),
@@ -116,6 +132,8 @@ module risc32i(
 		.mem_wd_i(mem_wd), 
 		.mem_wreg_i(mem_wreg),
 		.jump_type_i(idex_jump_type),
+		.wait_reg_i(idex_wait_reg),
+		.ex_memop_i(ex_memop),
 		.ex_wdata_i(ex_wdata), 
 		.ex_wd_i(ex_wd), 
 		.ex_wreg_i(ex_wreg),
@@ -132,6 +150,9 @@ module risc32i(
 		.addr_base(id_addr_base),
 		.addr_off(id_addr_off),
 		.jump_type_o(id_jump_type),
+		.wait_reg_o(id_wait_reg),
+		.memop_o(id_memop),
+		.memfunct_o(id_memfunct),
 		.stall_req(id_stallreq)
     );
     
@@ -149,6 +170,9 @@ module risc32i(
 		.id_addr_base(id_addr_base),
 		.id_addr_off(id_addr_off),
 		.id_jump_type(id_jump_type),
+		.id_wait_reg(id_wait_reg),
+		.memop_i(id_memop),
+		.memfunct_i(id_memfunct),
         .ex_aluop(idex_aluop),
         .ex_alusel(idex_alusel),
         .ex_reg1(idex_reg1),
@@ -157,7 +181,10 @@ module risc32i(
         .ex_wreg(idex_wreg),
 		.ex_addr_base(idex_addr_base),
 		.ex_addr_off(idex_addr_off),
-		.jump_type_o(idex_jump_type)
+		.memop_o(idex_memop),
+		.memfunct_o(idex_memfunct),
+		.jump_type_o(idex_jump_type),
+		.wait_reg_o(idex_wait_reg)
     );
     
     //  ex
@@ -172,10 +199,14 @@ module risc32i(
 		.addr_base(idex_addr_base),
 		.addr_off(idex_addr_off),
 		.jump_type_i(idex_jump_type),
+		.memop_i(idex_memop),
+		.memfunct_i(idex_memfunct),
         .wdata_o(ex_wdata),
         .wd_o(ex_wd),
         .wreg_o(ex_wreg),
-		.addr_o(ex_addr)
+		.addr_o(ex_addr),
+		.memop_o(ex_memop),
+		.memfunct_o(ex_memfunct)
     );
     
     //  ex_mem
@@ -186,9 +217,15 @@ module risc32i(
         .ex_wdata(ex_wdata),
         .ex_wd(ex_wd),
         .ex_wreg(ex_wreg),
+		.ex_addr(ex_addr),
+		.memop_i(ex_memop),
+		.memfunct_i(ex_memfunct),
         .mem_wdata(exmem_wdata),
         .mem_wd(exmem_wd),
-        .mem_wreg(exmem_wreg)
+        .mem_wreg(exmem_wreg),
+		.mem_addr(exmem_addr),
+		.memop_o(exmem_memop),
+		.memfunct_o(exmem_memfunct)
     );
     
     //  mem
@@ -197,6 +234,15 @@ module risc32i(
         .wdata_i(exmem_wdata),
         .wd_i(exmem_wd),
         .wreg_i(exmem_wreg),
+		.exmem_addr(exmem_addr),
+		.memop_i(exmem_memop),
+		.memfunct_i(exmem_memfunct),
+		.read_data_value(cache_read_data_value),
+		.data_ce(mem_data_ce),
+		.data_optype(mem_data_optype),
+		.data_addr(mem_data_addr),
+		.write_data_value(mem_write_data_value),
+		.write_data_mask(mem_write_data_mask),
         .wdata_o(mem_wdata),
         .wd_o(mem_wd),
         .wreg_o(mem_wreg)
@@ -234,7 +280,26 @@ module risc32i(
 	//	ctrl
 	ctrl ctrl0(
 		.rst(rst),
+		.mem_busy(cache_busy),
 		.id_req(id_stallreq),
 		.stall(ctrl_stall)
+	);
+
+	//	cache
+	cache cache0(
+		.clk(clk),
+		.rst(rst),
+		.inst_ce(pcreg_ce),
+		.data_ce(mem_data_ce),
+		.data_optype(mem_data_optype),
+		.inst_addr(pcreg_pc),
+		.data_addr(mem_data_addr),
+		.write_data_mask(mem_write_data_mask),
+		.write_data_value(mem_write_data_value),
+		.inst_value(cache_inst_value),
+		.read_data_value(cache_read_data_value),
+		.busy(cache_busy),
+		.Tx(Tx),
+		.Rx(Rx)
 	);
 endmodule

@@ -1,23 +1,24 @@
 [*]
 [*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
-[*] Fri Jan  5 13:50:45 2018
+[*] Sun Jan  7 03:36:35 2018
 [*]
 [dumpfile] "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
-[dumpfile_mtime] "Fri Jan  5 13:48:13 2018"
-[dumpfile_size] 232106
-[savefile] "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/wave.gtkw"
-[timestart] 90700
+[dumpfile_mtime] "Sun Jan  7 03:31:27 2018"
+[dumpfile_size] 500045
+[savefile] "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/wuwave.gtkw"
+[timestart] 0
 [size] 1842 1053
-[pos] -813 -10
-*-15.790777 360500 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -1 -1
+*-15.790777 2590800 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] sopc_tb.
 [treeopen] sopc_tb.sopc0.
 [treeopen] sopc_tb.sopc0.risc32i0.
 [treeopen] sopc_tb.sopc0.risc32i0.ex0.
+[treeopen] sopc_tb.sopc0.risc32i0.id0.
 [treeopen] sopc_tb.sopc0.risc32i0.mem0.
 [treeopen] sopc_tb.sopc0.risc32i0.pc_reg0.
 [sst_width] 253
-[signals_width] 275
+[signals_width] 399
 [sst_expanded] 1
 [sst_vpaned_height] 305
 @28
@@ -40,11 +41,31 @@ sopc_tb.sopc0.risc32i0.id0.aluop_o[4:0]
 @28
 sopc_tb.sopc0.risc32i0.id0.alusel_o[2:0]
 @22
+sopc_tb.sopc0.risc32i0.id0.addr_base[31:0]
+sopc_tb.sopc0.risc32i0.id0.addr_off[31:0]
+@28
+sopc_tb.sopc0.risc32i0.id0.wreg_o
+@22
 sopc_tb.sopc0.risc32i0.id0.wd_o[4:0]
 @28
 sopc_tb.sopc0.risc32i0.id0.wreg_o
+@c00022
+sopc_tb.sopc0.risc32i0.id0.sub_reqstall[3:0]
+@28
+(0)sopc_tb.sopc0.risc32i0.id0.sub_reqstall[3:0]
+(1)sopc_tb.sopc0.risc32i0.id0.sub_reqstall[3:0]
+(2)sopc_tb.sopc0.risc32i0.id0.sub_reqstall[3:0]
+(3)sopc_tb.sopc0.risc32i0.id0.sub_reqstall[3:0]
+@1401200
+-group_end
 @20000
 -
+@22
+sopc_tb.sopc0.risc32i0.ex0.aluop_i[4:0]
+sopc_tb.sopc0.risc32i0.ex0.addr_base[31:0]
+sopc_tb.sopc0.risc32i0.ex0.addr_off[31:0]
+@23
+sopc_tb.sopc0.risc32i0.ex0.addr_o[31:0]
 @c00022
 sopc_tb.sopc0.risc32i0.ex0.wdata_o[31:0]
 @28
@@ -88,8 +109,49 @@ sopc_tb.sopc0.risc32i0.ex0.wd_o[4:0]
 sopc_tb.sopc0.risc32i0.ex0.wreg_o
 @20000
 -
+@28
+sopc_tb.sopc0.risc32i0.mem0.data_ce
+sopc_tb.sopc0.risc32i0.mem0.data_optype
 @22
+sopc_tb.sopc0.risc32i0.mem0.read_data_value[31:0]
+@c00022
 sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+@28
+(0)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(1)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(2)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(3)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(4)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(5)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(6)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(7)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(8)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(9)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(10)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(11)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(12)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(13)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(14)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(15)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(16)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(17)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(18)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(19)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(20)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(21)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(22)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(23)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(24)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(25)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(26)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(27)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(28)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(29)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(30)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+(31)sopc_tb.sopc0.risc32i0.mem0.wdata_o[31:0]
+@1401200
+-group_end
+@22
 sopc_tb.sopc0.risc32i0.mem0.wd_o[4:0]
 @28
 sopc_tb.sopc0.risc32i0.mem0.wreg_o
@@ -107,47 +169,10 @@ sopc_tb.sopc0.risc32i0.regfile0.\regs[1][31:0]
 sopc_tb.sopc0.risc32i0.regfile0.\regs[2][31:0]
 sopc_tb.sopc0.risc32i0.regfile0.\regs[3][31:0]
 sopc_tb.sopc0.risc32i0.regfile0.\regs[4][31:0]
+sopc_tb.sopc0.risc32i0.regfile0.\regs[5][31:0]
+sopc_tb.sopc0.risc32i0.regfile0.\regs[6][31:0]
+sopc_tb.sopc0.risc32i0.regfile0.\regs[7][31:0]
 @20000
 -
-@c00023
-sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-@28
-(0)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(1)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(2)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(3)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(4)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(5)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(6)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(7)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(8)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(9)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(10)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(11)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(12)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(13)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(14)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(15)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(16)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(17)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(18)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(19)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(20)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(21)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(22)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(23)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(24)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(25)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(26)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(27)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(28)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(29)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(30)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-(31)sopc_tb.sopc0.risc32i0.cache0.\data[0][31:0]
-@1401201
--group_end
-@22
-sopc_tb.sopc0.risc32i0.cache0.\data[1][31:0]
-sopc_tb.sopc0.risc32i0.cache0.\data[2][31:0]
 [pattern_trace] 1
 [pattern_trace] 0
