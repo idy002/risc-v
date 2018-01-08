@@ -86,7 +86,6 @@ module id(
 			reg1_addr_o <= `ZeroRegAddr;
 			reg2_addr_o <= `ZeroRegAddr;
 			imm <= 32'b0;
-			addr_base <= `ZeroWord;
 			addr_off  <= `ZeroWord;
 			jump_type_o <= `NoJump;
 			wait_reg_o <= `NoWait;
@@ -108,7 +107,6 @@ module id(
 			reg1_addr_o <= `ZeroRegAddr;
 			reg2_addr_o <= `ZeroRegAddr;
 			imm <= `ZeroWord;
-			addr_base <= `ZeroWord;
 			addr_off  <= `ZeroWord;
 			jump_type_o <= `NoJump;
 			wait_reg_o <= `NoWait;

@@ -2,13 +2,13 @@
 # Webtalk v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Sun Dec 17 22:37:28 2017
-# Process ID: 9288
+# Start of session at: Sun Jan  7 18:24:27 2018
+# Process ID: 1256
 # Current directory: C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/behav/xsim/xsim.dir/sopc_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
 source C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/behav/xsim/xsim.dir/sopc_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] 'C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/behav/xsim/xsim.dir/sopc_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Dec 17 22:37:32 2017. For additional details about this file, please refer to the WebTalk help file at D:/Vivado/Vivado/2017.3/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Sun Dec 17 22:37:32 2017...
+INFO: [Common 17-186] 'C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/behav/xsim/xsim.dir/sopc_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Jan  7 18:24:31 2018. For additional details about this file, please refer to the WebTalk help file at D:/Vivado/Vivado/2017.3/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sun Jan  7 18:24:31 2018...

@@ -3,7 +3,9 @@
 
 module sopc(
         input wire clk,
-        input wire rst
+        input wire rst,
+        
+        output[10:0] display_out 
     );
 
     wire[`MemAddrWidth-1:0] inst_addr;

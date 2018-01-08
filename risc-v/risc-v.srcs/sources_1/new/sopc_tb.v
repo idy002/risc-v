@@ -10,7 +10,7 @@ module sopc_tb();
     end
 
     initial begin
-        $dumpfile(`WaveFile);
+//        $dumpfile(`WaveFile);
         $dumpvars;
         rst = `RstEnable;
         #195 rst = `RstDisable;
