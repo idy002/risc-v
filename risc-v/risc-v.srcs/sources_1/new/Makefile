@@ -10,7 +10,10 @@ SOURSES =    $(SOURSE_DIR)ctrl.v   \
 			 $(SOURSE_DIR)midbuf.v \
 			 $(SOURSE_DIR)regfile.v \
 			 $(SOURSE_DIR)risc32i.v \
-			 $(SOURSE_DIR)cache.v \
+			 $(SOURSE_DIR)cache.v 	\
+			 $(SOURSE_DIR)memory_sim.v 	\
+			 $(SOURSE_DIR)fifo.v 	\
+			 $(SOURSE_DIR)uart_comm.v \
 			 $(SOURSE_DIR)sopc.v    \
 			 $(SOURSE_DIR)sopc_tb.v \
 			 $(SOURSE_DIR)defines.vh \

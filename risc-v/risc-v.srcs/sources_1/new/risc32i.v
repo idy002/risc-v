@@ -32,7 +32,6 @@ module risc32i(
 	wire[`RegDataWidth-1:0] id_addr_base;
 	wire[`RegDataWidth-1:0] id_addr_off;
 	wire[1:0] id_jump_type;
-	wire	id_wait_reg;
 	wire[1:0] id_memop;
 	wire[2:0] id_memfunct;
 	wire id_stallreq;
@@ -53,7 +52,6 @@ module risc32i(
 	wire[1:0] idex_memop;
 	wire[2:0] idex_memfunct;
 	wire[1:0] idex_jump_type;
-	wire	  idex_wait_reg;
     
     //  ex outputs
     wire[`RegDataWidth-1:0] ex_wdata; 
@@ -132,7 +130,6 @@ module risc32i(
 		.mem_wd_i(mem_wd), 
 		.mem_wreg_i(mem_wreg),
 		.jump_type_i(idex_jump_type),
-		.wait_reg_i(idex_wait_reg),
 		.ex_memop_i(ex_memop),
 		.ex_wdata_i(ex_wdata), 
 		.ex_wd_i(ex_wd), 
@@ -150,7 +147,6 @@ module risc32i(
 		.addr_base(id_addr_base),
 		.addr_off(id_addr_off),
 		.jump_type_o(id_jump_type),
-		.wait_reg_o(id_wait_reg),
 		.memop_o(id_memop),
 		.memfunct_o(id_memfunct),
 		.stall_req(id_stallreq)
@@ -170,7 +166,6 @@ module risc32i(
 		.id_addr_base(id_addr_base),
 		.id_addr_off(id_addr_off),
 		.id_jump_type(id_jump_type),
-		.id_wait_reg(id_wait_reg),
 		.memop_i(id_memop),
 		.memfunct_i(id_memfunct),
         .ex_aluop(idex_aluop),
@@ -183,8 +178,7 @@ module risc32i(
 		.ex_addr_off(idex_addr_off),
 		.memop_o(idex_memop),
 		.memfunct_o(idex_memfunct),
-		.jump_type_o(idex_jump_type),
-		.wait_reg_o(idex_wait_reg)
+		.jump_type_o(idex_jump_type)
     );
     
     //  ex

@@ -5,10 +5,10 @@
 //
 //`define MemFile         "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/inst.mem"
 //`define WaveFile        "/home/idy002/github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
-//`define MemFile         "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/inst.mem"
-//`define WaveFile        "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
-`define MemFile       "C:\\Users\\99486\\Desktop\\architecture\\risc-v\\risc-v\\risc-v.srcs\\sources_1\\new\\inst.mem"
-`define WaveFile        "C:\\Users\\99486\\Desktop\\architecture\\risc-v\\risc-v\\risc-v.srcs\\sources_1\\new\\dump.vcd"
+`define MemFile         "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/test1.in"
+`define WaveFile        "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
+//`define MemFile       "C:\\Users\\99486\\Desktop\\architecture\\risc-v\\risc-v\\risc-v.srcs\\sources_1\\new\\inst.mem"
+//`define WaveFile        "C:\\Users\\99486\\Desktop\\architecture\\risc-v\\risc-v\\risc-v.srcs\\sources_1\\new\\dump.vcd"
 `define ChipEnable      1'b1
 `define ChipDisable     1'b0
 `define RstEnable       1'b1
@@ -37,6 +37,7 @@
 `define CacheDispPos	(`CacheDispWidth-1):0
 `define CacheIndexPos	(`CacheIndexWidth + `CacheDispWidth - 1) : (`CacheDispWidth)
 `define CacheTagPos		27 : (`CacheIndexWidth + `CacheDispWidth)
+`define CacheBlockAddrPos 27 : (`CacheDispWidth)
 `define CacheLineBits	(1 + 12 +  16 * 8)	//	1 + 8 + 2^6 * 8
 `define CacheLineNum	(4096)		//	2^12
 `define BlockBytes		16

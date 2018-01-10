@@ -14,7 +14,7 @@ module sopc_tb();
         $dumpvars;
         rst = `RstEnable;
         #195 rst = `RstDisable;
-        #20000 $finish;
+        #500000 $finish;
     end
 
     sopc sopc0(

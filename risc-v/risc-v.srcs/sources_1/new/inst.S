@@ -1,6 +1,7 @@
 .org 0x0
 	.global _start
 
+
 _start:
 	lui x3, 0x80000		# (1) x3 = 0x80000000
 	ori x1, x0, 0x1		# (1) x1 = 0x00000001

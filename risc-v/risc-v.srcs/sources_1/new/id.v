@@ -19,7 +19,6 @@ module id(
 
 		//	read from id_ex
 		input wire[1:0] jump_type_i,
-		input wire		wait_reg_i,
 
 		//	read from ex
 		input wire[1:0] ex_memop_i,
@@ -43,7 +42,6 @@ module id(
 		output reg[`RegDataWidth-1:0] addr_base,
 		output reg[`RegDataWidth-1:0] addr_off,
 		output reg[1:0] jump_type_o,
-		output reg		wait_reg_o,
 		output reg[1:0] memop_o,
 		output reg[2:0] memfunct_o,
 
@@ -63,6 +61,7 @@ module id(
 
 	reg inst_valid;
 
+	reg[1:0] jump_type_inner;
 	reg[3:0] sub_reqstall;
 	reg		stall_cur_available;
 
@@ -87,8 +86,7 @@ module id(
 			reg2_addr_o <= `ZeroRegAddr;
 			imm <= 32'b0;
 			addr_off  <= `ZeroWord;
-			jump_type_o <= `NoJump;
-			wait_reg_o <= `NoWait;
+			jump_type_inner <= `NoJump;
 			pre_memop_o <= `MEM_NOP;
 			memfunct_o <= 3'b000;
 			sub_reqstall[0] <= `NoRequestStall;
@@ -108,8 +106,7 @@ module id(
 			reg2_addr_o <= `ZeroRegAddr;
 			imm <= `ZeroWord;
 			addr_off  <= `ZeroWord;
-			jump_type_o <= `NoJump;
-			wait_reg_o <= `NoWait;
+			jump_type_inner <= `NoJump;
 			pre_memop_o <= `MEM_NOP;
 			memfunct_o <= 3'b000;
 			sub_reqstall[0] <= `NoRequestStall;
@@ -249,7 +246,7 @@ module id(
 					if (jump_type_i != `NoJump) begin
 						//	default nop instruction
 					end else begin
-						jump_type_o <= `JumpBranch;
+						jump_type_inner <= `JumpBranch;
 						addr_base_type <= `DataPC;
 						addr_off <= {{20{inst_i[31]}},inst_i[7],inst_i[30:25],inst_i[11:8],1'b0};
 						reg1_type <= `DataReg;
@@ -297,7 +294,7 @@ module id(
 					if (jump_type_i != `NoJump) begin
 						//	default nop instruction
 					end else begin
-						jump_type_o <= `JumpUncdt;
+						jump_type_inner <= `JumpUncdt;
 						addr_base_type <= `DataPC;
 						addr_off <= {{12{inst_i[31]}},inst_i[19:12],inst_i[20],inst_i[30:21],1'b0};
 						reg1_type <= `DataPC;
@@ -315,7 +312,7 @@ module id(
 					if (jump_type_i != `NoJump) begin
 						//	default nop instruction
 					end else begin
-						jump_type_o <= `JumpUncdt;
+						jump_type_inner <= `JumpUncdt;
 						addr_base_type <= `DataReg;
 						reg1_read_o <= `ReadEnable;
 						reg1_addr_o <= inst_i[19:15];
@@ -479,6 +476,23 @@ module id(
 			wreg_o <= `WriteDisable;
 			memop_o <= `MEM_NOP;
 		end else begin
+			if(sub_reqstall[1] || sub_reqstall[2] || sub_reqstall[3]) begin
+				stall_req <= `RequestStall;
+				wreg_o <= `WriteDisable;
+				memop_o <= `MEM_NOP;
+				jump_type_o <= `NoJump;
+			end else if(sub_reqstall[0]) begin
+				stall_req <= `RequestStall;
+				wreg_o <= pre_wreg_o;
+				memop_o <= pre_memop_o;
+				jump_type_o <= jump_type_inner;
+			end else begin
+				stall_req <= `NoRequestStall;
+				wreg_o <= pre_wreg_o;
+				memop_o <= pre_memop_o;
+				jump_type_o <= jump_type_inner;
+			end
+			/*
 			if(sub_reqstall[0] || sub_reqstall[1] || sub_reqstall[2] || sub_reqstall[3]) begin
 				stall_req <= `RequestStall;
 				if(stall_cur_available) begin
@@ -493,6 +507,7 @@ module id(
 				wreg_o <= pre_wreg_o;
 				memop_o <= pre_memop_o;
 			end
+			*/
 		end
 	end
 endmodule
