@@ -1,13 +1,13 @@
 `timescale 1ns / 1ps
 `include "defines.vh"
 
-module sopc(
+module cpu(
         input wire EXclk,
         input wire button,
         
 		output Tx,
-		input Rx,
-        output[10:0] display_out 
+		input Rx
+//        output[10:0] display_out 
     );
 /*    
     reg[7:0] counter;
@@ -34,6 +34,7 @@ module sopc(
     end
 */
     
+	/*
     reg rst;
     reg rst_delay;
     
@@ -57,7 +58,11 @@ module sopc(
 		.Tx(Tx),
 		.Rx(Rx)
     );
-    
-
-
+	*/
+   risc32i risc32i0(
+	   .clk(EXclk),
+	   .rst(button),
+	   .Tx(Tx),
+	   .Rx(Rx)
+   );
 endmodule

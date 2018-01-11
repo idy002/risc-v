@@ -35,7 +35,7 @@ module fifo
     assign read_data = buffer[read_ptr];
     
     integer i;
-    always @(negedge CLK or posedge RST) begin
+    always @(posedge CLK or posedge RST) begin
     	if(RST) begin
     		read_ptr <= 0;
     		write_ptr <= 0;

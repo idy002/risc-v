@@ -14,10 +14,13 @@ SOURSES =    $(SOURSE_DIR)ctrl.v   \
 			 $(SOURSE_DIR)memory_sim.v 	\
 			 $(SOURSE_DIR)fifo.v 	\
 			 $(SOURSE_DIR)uart_comm.v \
-			 $(SOURSE_DIR)sopc.v    \
-			 $(SOURSE_DIR)sopc_tb.v \
+			 $(SOURSE_DIR)cpu.v    \
+			 $(SOURSE_DIR)sim.v	\
 			 $(SOURSE_DIR)defines.vh \
 			 $(SOURSE_DIR)opcode.vh
+
+
+#			 $(SOURSE_DIR)sopc_tb.v \
 
 start : 
 	@echo "Hello, ding!"
@@ -34,7 +37,7 @@ wave : dump.vcd
 
 dump.vcd : sopc inst.mem
 	#   --   Simulate   --
-	vvp sopc > /dev/null
+	vvp sopc #> /dev/null
 
 sopc : $(SOURSES)
 	#   --   Complie Verilog  --
