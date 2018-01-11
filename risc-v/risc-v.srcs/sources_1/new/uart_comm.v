@@ -5,7 +5,7 @@
 
 module uart_comm 
 	#(
-	parameter BAUDRATE = 1000000,
+	parameter BAUDRATE =   25000000,
 	parameter CLOCKRATE = 100000000
 	)(
 	input CLK,
@@ -101,6 +101,7 @@ module uart_comm
 					if(recv_parity == Rx && !recv_full)
 						recv_write_flag <= 1;
 					recv_status <= STATUS_END;
+//					$display("[uart_comm] Receive %d", recv_write_data);
 				end
 				
 				STATUS_END: begin
@@ -164,6 +165,7 @@ module uart_comm
 				STATUS_VALID:begin
 					Tx <= send_parity;
 					send_status <= STATUS_END;
+//					$display("[uart_comm] Send %d", send_read_data_buf);
 				end
 				
 				STATUS_END:begin

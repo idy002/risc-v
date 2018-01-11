@@ -1,0 +1,127 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Thu Jan 11 12:43:21 2018
+[*]
+[dumpfile] "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/dump.vcd"
+[dumpfile_mtime] "Thu Jan 11 12:32:46 2018"
+[dumpfile_size] 2738104
+[savefile] "/home/ding/Github/risc-v/risc-v/risc-v.srcs/sources_1/new/wmem.gtkw"
+[timestart] 35674800
+[size] 1816 1044
+[pos] -1 -1
+*-15.000000 35746700 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] sim.
+[treeopen] sim.cpu0.
+[treeopen] sim.cpu0.risc32i0.
+[treeopen] sim.cpu0.risc32i0.cache0.
+[treeopen] sim.cpu0.risc32i0.id0.
+[treeopen] sim.memory_sim0.
+[sst_width] 301
+[signals_width] 265
+[sst_expanded] 1
+[sst_vpaned_height] 308
+@28
+sim.Rx
+sim.Tx
+@201
+-
+@28
+sim.clk
+sim.rst
+@200
+-
+@c00024
+sim.cpu0.risc32i0.id0.inst_i[31:0]
+@28
+(0)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(1)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(2)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(3)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(4)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(5)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(6)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(7)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(8)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(9)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(10)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(11)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(12)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(13)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(14)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(15)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(16)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(17)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(18)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(19)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(20)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(21)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(22)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(23)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(24)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(25)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(26)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(27)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(28)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(29)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(30)sim.cpu0.risc32i0.id0.inst_i[31:0]
+(31)sim.cpu0.risc32i0.id0.inst_i[31:0]
+@1401200
+-group_end
+@24
+sim.cpu0.risc32i0.id0.pc_i[31:0]
+@200
+-
+@28
+sim.cpu0.risc32i0.cache0.busy
+sim.cpu0.risc32i0.cache0.inst_ce
+sim.cpu0.risc32i0.cache0.data_ce
+@22
+sim.cpu0.risc32i0.cache0.cur_status[3:0]
+@24
+sim.cpu0.risc32i0.cache0.cur_disp[2:0]
+@28
+sim.cpu0.risc32i0.cache0.uart_sendable
+sim.cpu0.risc32i0.cache0.uart_receivable
+@200
+-
+@c00024
+sim.memory_sim0.cur_count
+@28
+(0)sim.memory_sim0.cur_count
+(1)sim.memory_sim0.cur_count
+(2)sim.memory_sim0.cur_count
+(3)sim.memory_sim0.cur_count
+(4)sim.memory_sim0.cur_count
+(5)sim.memory_sim0.cur_count
+(6)sim.memory_sim0.cur_count
+(7)sim.memory_sim0.cur_count
+(8)sim.memory_sim0.cur_count
+(9)sim.memory_sim0.cur_count
+(10)sim.memory_sim0.cur_count
+(11)sim.memory_sim0.cur_count
+(12)sim.memory_sim0.cur_count
+(13)sim.memory_sim0.cur_count
+(14)sim.memory_sim0.cur_count
+(15)sim.memory_sim0.cur_count
+(16)sim.memory_sim0.cur_count
+(17)sim.memory_sim0.cur_count
+(18)sim.memory_sim0.cur_count
+(19)sim.memory_sim0.cur_count
+(20)sim.memory_sim0.cur_count
+(21)sim.memory_sim0.cur_count
+(22)sim.memory_sim0.cur_count
+(23)sim.memory_sim0.cur_count
+(24)sim.memory_sim0.cur_count
+(25)sim.memory_sim0.cur_count
+(26)sim.memory_sim0.cur_count
+(27)sim.memory_sim0.cur_count
+(28)sim.memory_sim0.cur_count
+(29)sim.memory_sim0.cur_count
+(30)sim.memory_sim0.cur_count
+(31)sim.memory_sim0.cur_count
+@1401204
+-group_end
+@24
+sim.memory_sim0.cur_disp
+[pattern_trace] 1
+[pattern_trace] 0

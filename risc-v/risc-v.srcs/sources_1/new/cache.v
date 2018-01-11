@@ -134,6 +134,8 @@ module cache(
 			next_disp	<= 0;
 			uart_send_flag <= `SendDisable;
 			uart_recv_flag <= `RecvDisable;
+			inst_value <= 0;
+			read_data_value <= 0;
 		end else begin
 			uart_send_flag <= `SendDisable;
 			uart_recv_flag <= `RecvDisable;
@@ -158,6 +160,7 @@ module cache(
 						if(cur_disp == HeadFullDisp) begin
 							next_status <= CS_DATA_VALUE;
 							next_disp <= 0;
+							$display("[cache] send data head [%x]", cur_head);
 						end else begin
 							next_status <= cur_status;
 							next_disp <= cur_disp + 1;
@@ -179,6 +182,7 @@ module cache(
 									next_status <= CS_INST_HEAD;
 								else
 									next_status <= CS_OUTPUT;
+								$display("[cache] recv data value [%x]", {uart_recv_data,read_data_value[23:0]});
 							end else begin
 								next_status <= cur_status;
 								next_disp <= cur_disp + 1;
@@ -199,6 +203,7 @@ module cache(
 								end else begin
 									next_status <= CS_OUTPUT;
 								end
+								$display("[cache] send data value [%x]", write_data_value);
 							end else begin
 								next_status <= cur_status;
 								next_disp <= cur_disp + 1;
@@ -217,6 +222,7 @@ module cache(
 						if(cur_disp == HeadFullDisp) begin
 							next_status <= CS_INST_VALUE;
 							next_disp <= 0;
+							$display("[cache] send inst head [%x]", cur_head);
 						end else begin
 							next_status <= cur_status;
 							next_disp <= cur_disp + 1;
@@ -234,6 +240,7 @@ module cache(
 						if(cur_disp == DataFullDisp) begin
 							next_disp <= 0;
 							next_status <= CS_OUTPUT;
+							$display("[cache] recv inst value [%x]", {uart_recv_data,inst_value[23:0]});
 						end else begin
 							next_status <= cur_status;
 							next_disp <= cur_disp + 1;
@@ -244,12 +251,14 @@ module cache(
 					end
 				end
 				CS_OUTPUT: begin
+					$display("[cache] cur_status: CS_OUTPUT");
 					next_status <= CS_READY;
 					next_disp <= 0;
 				end
 			endcase
 		end
 	end
+
 
 //
 //	update the status and disp per clock
