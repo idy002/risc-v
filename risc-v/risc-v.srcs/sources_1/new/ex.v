@@ -70,9 +70,6 @@ module ex(
 			arithout <= `ZeroWord;
 			shiftout <= `ZeroWord;
 			case (aluop_i)
-				`EXE_OR_OP: begin
-					logicout <= reg1_i | reg2_i;
-				end
 				`EXE_ADD_OP: begin
 					arithout <= reg1_i + reg2_i;
 				end

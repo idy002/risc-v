@@ -54,7 +54,6 @@ module id_ex(
 		input wire[`RegDataWidth-1:0]	id_addr_base,
 		input wire[`RegDataWidth-1:0]	id_addr_off,
 		input wire[1:0] id_jump_type,
-		input wire id_wait_reg,
 		input wire[1:0] memop_i,
 		input wire[2:0] memfunct_i,
 		
@@ -71,10 +70,7 @@ module id_ex(
 		output reg[2:0] memfunct_o,
 
 		//	output to ex, pc_reg, if_id, id
-		output reg[1:0] jump_type_o,
-
-		//	output to id
-		output reg wait_reg_o
+		output reg[1:0] jump_type_o
 	);
 	always @ (posedge clk)
 	begin
@@ -88,7 +84,6 @@ module id_ex(
 			ex_addr_base <= `ZeroWord;
 			ex_addr_off	<=	`ZeroWord;
 			jump_type_o	<=	`NoJump;
-			wait_reg_o <=	`NoWait;
 			memop_o		<=	`MEM_NOP;
 			memfunct_o  <=	0;
 		end else if(!stall[2]) begin
@@ -101,7 +96,6 @@ module id_ex(
 			ex_addr_base <= id_addr_base;
 			ex_addr_off	<=	id_addr_off;
 			jump_type_o	<=	id_jump_type;
-			wait_reg_o <=	id_wait_reg;
 			memop_o		<=	memop_i;
 			memfunct_o  <=	memfunct_i;
 		end 

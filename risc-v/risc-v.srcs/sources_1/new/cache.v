@@ -5,8 +5,6 @@ module cache(
 		input wire clk,
 		input wire rst,
 
-		input wire flush,	//	make sure when flush is 1,  inst_ce and data_ce are 0
-
 		input wire inst_ce, data_ce,
 		input wire data_optype,		//	0 for `MemRead 1 for `MemWrite
 		input wire[`MemAddrWidth-1:0] inst_addr,
@@ -29,9 +27,19 @@ module cache(
 	wire[7:0] uart_recv_data;
 	wire uart_receivable, uart_sendable;
 
-	uart_comm uart0( clk, rst, uart_send_flag, uart_send_data, uart_recv_flag, 
-		uart_recv_data, uart_sendable, uart_receivable, Tx, Rx);
-
+//	uart_comm uart0( clk, rst, uart_send_flag, uart_send_data, uart_recv_flag, 
+//		uart_recv_data, uart_sendable, uart_receivable, Tx, Rx);
+    uart_comm uart0( 
+            .CLK(clk),
+            .RST(rst),
+            .send_flag(uart_send_flag),
+            .send_data(uart_send_data),
+            .recv_flag(uart_recv_flag),
+            .recv_data(uart_recv_data),
+            .sendable(uart_sendable),
+            .receivable(uart_receivable), 
+            .Tx(Tx), 
+            .Rx(Rx) );
 	//	relative data
 	reg[39:0] cur_head;
 	reg[31:0] cur_data;

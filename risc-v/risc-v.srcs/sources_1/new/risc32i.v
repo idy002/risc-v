@@ -278,7 +278,7 @@ module risc32i(
 		.id_req(id_stallreq),
 		.stall(ctrl_stall)
 	);
-
+    
 	//	cache
 	cache cache0(
 		.clk(clk),
@@ -296,4 +296,7 @@ module risc32i(
 		.Tx(Tx),
 		.Rx(Rx)
 	);
+	
+//	uart_comm uart_comm0(.CLK(clk), .RST(rst));
+	
 endmodule

@@ -14,12 +14,16 @@ module ctrl(
 
 	always @ (*)
 	begin
-		if (mem_busy) begin
-			stall <= 6'b111111;
-		end else if (id_req) begin
-			stall <= 6'b000011;
-		end else begin
+		if (rst) begin
 			stall <= 6'b000000;
+		end else begin
+			if (mem_busy) begin
+				stall <= 6'b111111;
+			end else if (id_req) begin
+				stall <= 6'b000011;
+			end else begin
+				stall <= 6'b000000;
+			end
 		end
 	end
 
