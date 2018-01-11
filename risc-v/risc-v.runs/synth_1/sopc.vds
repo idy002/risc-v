@@ -2,8 +2,8 @@
 # Vivado v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Thu Jan 11 15:53:04 2018
-# Process ID: 5316
+# Start of session at: Thu Jan 11 18:28:37 2018
+# Process ID: 1180
 # Current directory: C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1
 # Command line: vivado.exe -log sopc.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sopc.tcl
 # Log file: C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/sopc.vds
@@ -15,13 +15,13 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 4196 
+INFO: Helper process launched with PID 2952 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 356.266 ; gain = 98.250
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 356.125 ; gain = 100.371
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'sopc' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/sopc.v:4]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/.Xil/Vivado-5316-Lenovo/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/.Xil/Vivado-5316-Lenovo/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/.Xil/Vivado-1180-Lenovo/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'clk_wiz_0' (1#1) [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/.Xil/Vivado-1180-Lenovo/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-638] synthesizing module 'risc32i' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/risc32i.v:5]
 INFO: [Synth 8-638] synthesizing module 'pc_reg' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/pc_reg.v:4]
 INFO: [Synth 8-256] done synthesizing module 'pc_reg' (2#1) [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/pc_reg.v:4]
@@ -58,12 +58,12 @@ INFO: [Synth 8-638] synthesizing module 'cache' [C:/Users/99486/Desktop/architec
 	Parameter CS_OUTPUT bound to: 4'b0101 
 	Parameter READ_BIT bound to: 1'b0 
 	Parameter WRITE_BIT bound to: 1'b1 
-	Parameter HeadFullDisp bound to: 3'b101 
+	Parameter HeadFullDisp bound to: 3'b100 
 	Parameter DataFullDisp bound to: 3'b011 
 INFO: [Synth 8-638] synthesizing module 'uart_comm' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/uart_comm.v:6]
-	Parameter BAUDRATE bound to: 9600 - type: integer 
+	Parameter BAUDRATE bound to: 1000000 - type: integer 
 	Parameter CLOCKRATE bound to: 100000000 - type: integer 
-	Parameter SAMPLE_INTERVAL bound to: 10416 - type: integer 
+	Parameter SAMPLE_INTERVAL bound to: 100 - type: integer 
 	Parameter STATUS_IDLE bound to: 0 - type: integer 
 	Parameter STATUS_BEGIN bound to: 1 - type: integer 
 	Parameter STATUS_DATA bound to: 2 - type: integer 
@@ -79,7 +79,7 @@ INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/9948
 WARNING: [Synth 8-6014] Unused sequential element tosend_reg was removed.  [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/uart_comm.v:138]
 INFO: [Synth 8-256] done synthesizing module 'uart_comm' (13#1) [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/uart_comm.v:6]
 INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/cache.v:77]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/cache.v:138]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/cache.v:140]
 INFO: [Synth 8-256] done synthesizing module 'cache' (14#1) [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/cache.v:4]
 INFO: [Synth 8-256] done synthesizing module 'risc32i' (15#1) [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/risc32i.v:5]
 WARNING: [Synth 8-3848] Net display_out in module/entity sopc does not have driver. [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/sopc.v:10]
@@ -126,7 +126,7 @@ WARNING: [Synth 8-3331] design sopc has unconnected port display_out[2]
 WARNING: [Synth 8-3331] design sopc has unconnected port display_out[1]
 WARNING: [Synth 8-3331] design sopc has unconnected port display_out[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 408.824 ; gain = 150.809
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 408.805 ; gain = 153.051
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -136,15 +136,15 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 408.824 ; gain = 150.809
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 408.805 ; gain = 153.051
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/.Xil/Vivado-5316-Lenovo/dcp3/clk_wiz_0_in_context.xdc] for cell 'clk0'
-Finished Parsing XDC File [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/.Xil/Vivado-5316-Lenovo/dcp3/clk_wiz_0_in_context.xdc] for cell 'clk0'
+Parsing XDC File [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/.Xil/Vivado-1180-Lenovo/dcp3/clk_wiz_0_in_context.xdc] for cell 'clk0'
+Finished Parsing XDC File [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/.Xil/Vivado-1180-Lenovo/dcp3/clk_wiz_0_in_context.xdc] for cell 'clk0'
 Parsing XDC File [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/constrs_1/new/cons.xdc]
 Finished Parsing XDC File [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/constrs_1/new/cons.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/constrs_1/new/cons.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/sopc_propImpl.xdc].
@@ -154,25 +154,25 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 756.832 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 758.695 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 756.832 ; gain = 498.816
+Finished Constraint Validation : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 758.695 ; gain = 502.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 756.832 ; gain = 498.816
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 758.695 ; gain = 502.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for EXclk. (constraint file  C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/.Xil/Vivado-5316-Lenovo/dcp3/clk_wiz_0_in_context.xdc, line 3).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for EXclk. (constraint file  C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/.Xil/Vivado-5316-Lenovo/dcp3/clk_wiz_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for EXclk. (constraint file  C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/.Xil/Vivado-1180-Lenovo/dcp3/clk_wiz_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for EXclk. (constraint file  C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/.Xil/Vivado-1180-Lenovo/dcp3/clk_wiz_0_in_context.xdc, line 4).
 Applied set_property DONT_TOUCH = true for clk0. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 756.832 ; gain = 498.816
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 758.695 ; gain = 502.941
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "pre_memop_o" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "write_data_value" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
@@ -238,14 +238,12 @@ WARNING: [Synth 8-327] inferring latch for variable 'next_status_reg' [C:/Users/
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'cur_status_reg' using encoding 'sequential' in module 'cache'
 WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_status_reg' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/cache.v:133]
-WARNING: [Synth 8-327] inferring latch for variable 'inst_value_reg' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/cache.v:231]
-WARNING: [Synth 8-327] inferring latch for variable 'read_data_value_reg' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/cache.v:173]
+WARNING: [Synth 8-327] inferring latch for variable 'inst_value_reg' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/cache.v:233]
+WARNING: [Synth 8-327] inferring latch for variable 'read_data_value_reg' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/cache.v:175]
 WARNING: [Synth 8-327] inferring latch for variable 'next_disp_reg' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/cache.v:134]
-WARNING: [Synth 8-327] inferring latch for variable 'uart_send_flag_reg' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/cache.v:35]
 WARNING: [Synth 8-327] inferring latch for variable 'uart_send_data_reg' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/cache.v:36]
-WARNING: [Synth 8-327] inferring latch for variable 'uart_recv_flag_reg' [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/cache.v:37]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 756.832 ; gain = 498.816
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 758.695 ; gain = 502.941
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -529,7 +527,7 @@ INFO: [Synth 8-3886] merging instance 'risc32i0/id_ex0/ex_aluop_reg[4]' (FDRE) t
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (risc32i0/\id_ex0/ex_alusel_reg[2] )
 WARNING: [Synth 8-3332] Sequential element (id_ex0/ex_alusel_reg[2]) is unused and will be removed from module risc32i.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:53 . Memory (MB): peak = 756.832 ; gain = 498.816
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:00:56 . Memory (MB): peak = 758.695 ; gain = 502.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -558,13 +556,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'clk0/clk_out1' to pin 'clk0/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:05 ; elapsed = 00:01:08 . Memory (MB): peak = 785.473 ; gain = 527.457
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:07 ; elapsed = 00:01:11 . Memory (MB): peak = 782.223 ; gain = 526.469
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:07 ; elapsed = 00:01:11 . Memory (MB): peak = 816.516 ; gain = 558.500
+Finished Timing Optimization : Time (s): cpu = 00:01:09 ; elapsed = 00:01:13 . Memory (MB): peak = 813.156 ; gain = 557.402
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -590,7 +588,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:10 ; elapsed = 00:01:13 . Memory (MB): peak = 856.313 ; gain = 598.297
+Finished Technology Mapping : Time (s): cpu = 00:01:12 ; elapsed = 00:01:16 . Memory (MB): peak = 853.578 ; gain = 597.824
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -614,7 +612,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:11 ; elapsed = 00:01:14 . Memory (MB): peak = 856.313 ; gain = 598.297
+Finished IO Insertion : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 853.578 ; gain = 597.824
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -627,7 +625,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:11 ; elapsed = 00:01:14 . Memory (MB): peak = 856.313 ; gain = 598.297
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 853.578 ; gain = 597.824
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -639,25 +637,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:11 ; elapsed = 00:01:15 . Memory (MB): peak = 856.313 ; gain = 598.297
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:14 ; elapsed = 00:01:18 . Memory (MB): peak = 853.578 ; gain = 597.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:11 ; elapsed = 00:01:15 . Memory (MB): peak = 856.313 ; gain = 598.297
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:14 ; elapsed = 00:01:18 . Memory (MB): peak = 853.578 ; gain = 597.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:11 ; elapsed = 00:01:15 . Memory (MB): peak = 856.313 ; gain = 598.297
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:14 ; elapsed = 00:01:18 . Memory (MB): peak = 853.578 ; gain = 597.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:12 ; elapsed = 00:01:15 . Memory (MB): peak = 856.313 ; gain = 598.297
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:14 ; elapsed = 00:01:18 . Memory (MB): peak = 853.578 ; gain = 597.824
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -678,18 +676,18 @@ Report Cell Usage:
 |2     |BUFG      |     2|
 |3     |CARRY4    |    58|
 |4     |LUT1      |     6|
-|5     |LUT2      |   222|
-|6     |LUT3      |   138|
-|7     |LUT4      |   186|
-|8     |LUT5      |   272|
-|9     |LUT6      |   835|
-|10    |MUXF7     |    65|
+|5     |LUT2      |   224|
+|6     |LUT3      |   146|
+|7     |LUT4      |   188|
+|8     |LUT5      |   219|
+|9     |LUT6      |   871|
+|10    |MUXF7     |    66|
 |11    |RAM32M    |    12|
 |12    |FDCE      |   244|
 |13    |FDPE      |     3|
 |14    |FDRE      |   322|
 |15    |FDSE      |    30|
-|16    |LD        |    76|
+|16    |LD        |    74|
 |17    |LDC       |    42|
 |18    |IBUF      |     2|
 |19    |OBUF      |     1|
@@ -700,14 +698,14 @@ Report Instance Areas:
 +------+--------------------+----------+------+
 |      |Instance            |Module    |Cells |
 +------+--------------------+----------+------+
-|1     |top                 |          |  2528|
-|2     |  risc32i0          |risc32i   |  2509|
-|3     |    cache0          |cache     |   681|
-|4     |      uart0         |uart_comm |   519|
-|5     |        recv_buffer |fifo      |   137|
-|6     |        send_buffer |fifo_0    |   144|
+|1     |top                 |          |  2522|
+|2     |  risc32i0          |risc32i   |  2503|
+|3     |    cache0          |cache     |   674|
+|4     |      uart0         |uart_comm |   517|
+|5     |        recv_buffer |fifo      |   139|
+|6     |        send_buffer |fifo_0    |   141|
 |7     |    ex_mem0         |ex_mem    |   225|
-|8     |    id0             |id        |     2|
+|8     |    id0             |id        |     3|
 |9     |    id_ex0          |id_ex     |   958|
 |10    |    if_id0          |if_id     |   505|
 |11    |    mem0            |mem       |    44|
@@ -716,28 +714,28 @@ Report Instance Areas:
 |14    |    regfile0        |regfile   |    12|
 +------+--------------------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:12 ; elapsed = 00:01:15 . Memory (MB): peak = 856.313 ; gain = 598.297
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:14 ; elapsed = 00:01:18 . Memory (MB): peak = 853.578 ; gain = 597.824
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 42 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:51 ; elapsed = 00:01:05 . Memory (MB): peak = 856.313 ; gain = 250.289
-Synthesis Optimization Complete : Time (s): cpu = 00:01:12 ; elapsed = 00:01:15 . Memory (MB): peak = 856.313 ; gain = 598.297
+Synthesis finished with 0 errors, 0 critical warnings and 40 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:51 ; elapsed = 00:01:06 . Memory (MB): peak = 853.578 ; gain = 247.934
+Synthesis Optimization Complete : Time (s): cpu = 00:01:14 ; elapsed = 00:01:18 . Memory (MB): peak = 853.578 ; gain = 597.824
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 255 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 254 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 1 inverter(s) to 4 load pin(s).
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 2 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 130 instances were transformed.
+  A total of 128 instances were transformed.
   LD => LDCE: 72 instances
-  LD => LDCE (inverted pins: G): 4 instances
+  LD => LDCE (inverted pins: G): 2 instances
   LDC => LDCE: 42 instances
   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 12 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-101 Infos, 85 Warnings, 0 Critical Warnings and 0 Errors encountered.
+101 Infos, 83 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:15 ; elapsed = 00:01:19 . Memory (MB): peak = 856.313 ; gain = 607.391
+synth_design: Time (s): cpu = 00:01:17 ; elapsed = 00:01:22 . Memory (MB): peak = 853.578 ; gain = 605.297
 INFO: [Common 17-1381] The checkpoint 'C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/sopc.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file sopc_utilization_synth.rpt -pb sopc_tb_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 856.313 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Thu Jan 11 15:54:30 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 853.578 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Jan 11 18:30:09 2018...

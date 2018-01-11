@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date             : Thu Jan 11 15:56:05 2018
+| Date             : Thu Jan 11 18:31:59 2018
 | Host             : Lenovo running 64-bit major release  (build 9200)
 | Command          : report_power -file sopc_power_routed.rpt -pb sopc_power_summary_routed.pb -rpx sopc_power_routed.rpx
 | Design           : sopc
@@ -30,11 +30,11 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.185        |
+| Total On-Chip Power (W)  | 0.181        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.113        |
-| Device Static (W)        | 0.072        |
+| Device Static (W)        | 0.069        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.1         |
 | Junction Temperature (C) | 25.9         |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.004 |        5 |       --- |             --- |
-| Slice Logic              |     0.001 |     2614 |       --- |             --- |
-|   LUT as Logic           |     0.001 |     1425 |     20800 |            6.85 |
+| Slice Logic              |     0.001 |     2608 |       --- |             --- |
+|   LUT as Logic           |     0.001 |     1424 |     20800 |            6.85 |
 |   CARRY4                 |    <0.001 |       58 |      8150 |            0.71 |
-|   Register               |    <0.001 |      717 |     41600 |            1.72 |
+|   Register               |    <0.001 |      715 |     41600 |            1.72 |
 |   LUT as Distributed RAM |    <0.001 |       48 |      9600 |            0.50 |
-|   BUFG                   |    <0.001 |        2 |        32 |            6.25 |
-|   F7/F8 Muxes            |    <0.001 |       65 |     32600 |            0.20 |
+|   F7/F8 Muxes            |    <0.001 |       66 |     32600 |            0.20 |
 |   Others                 |     0.000 |       19 |       --- |             --- |
-| Signals                  |     0.001 |     2186 |       --- |             --- |
+|   BUFG                   |     0.000 |        2 |        32 |            6.25 |
+| Signals                  |     0.001 |     2184 |       --- |             --- |
 | MMCM                     |     0.106 |        1 |         5 |           20.00 |
 | I/O                      |    <0.001 |       15 |       106 |           14.15 |
-| Static Power             |     0.072 |          |           |                 |
-| Total                    |     0.185 |          |           |                 |
+| Static Power             |     0.069 |          |           |                 |
+| Total                    |     0.181 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,7 +77,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.017 |       0.007 |      0.010 |
 | Vccaux    |       1.800 |     0.071 |       0.059 |      0.013 |
-| Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -155,8 +155,8 @@ Table of Contents
 |         recv_buffer          |    <0.001 |
 |         send_buffer          |    <0.001 |
 |     ex_mem0                  |    <0.001 |
-|     id0                      |    <0.001 |
-|     id_ex0                   |     0.001 |
+|     id0                      |     0.000 |
+|     id_ex0                   |     0.002 |
 |     if_id0                   |    <0.001 |
 |     mem0                     |    <0.001 |
 |     mem_wb                   |    <0.001 |

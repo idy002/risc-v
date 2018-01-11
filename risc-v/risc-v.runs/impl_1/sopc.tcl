@@ -60,7 +60,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -76,7 +75,7 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_CDC [current_project]
   add_files -quiet C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/sopc.dcp
-  read_ip -quiet c:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  read_ip -quiet C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_xdc C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/constrs_1/new/cons.xdc
   link_design -top sopc -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb

@@ -125,13 +125,15 @@ module cache(
 	//	the combinational logic
 	//
 	integer index;
-	localparam HeadFullDisp	=	3'b101;
+	localparam HeadFullDisp	=	3'b100;
 	localparam DataFullDisp =	3'b011;
 
 	always @ (*) begin
 		if (rst) begin
 			next_status <= CS_READY;
 			next_disp	<= 0;
+			uart_send_flag <= `SendDisable;
+			uart_recv_flag <= `RecvDisable;
 		end else begin
 			uart_send_flag <= `SendDisable;
 			uart_recv_flag <= `RecvDisable;

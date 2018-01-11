@@ -25,7 +25,7 @@
       <Properties Property="PROBES.FILE" value=""/>
       <Properties Property="PROGRAM.HW_BITSTREAM" value="$_project_name_.runs/impl_1/sopc.bit"/>
       <Properties Property="PROGRAM.HW_CFGMEM_PART" value=""/>
-      <Properties Property="SLR.COUNT" value="c:/Users/99486/AppData/Roaming/Xilinx/Vivado/1"/>
+      <Properties Property="SLR.COUNT" value="C:/Users/99486/AppData/Roaming/Xilinx/Vivado/1"/>
     </Object>
   </ObjectList>
   <probeset name="hw project" active="false"/>

@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Thu Jan 11 15:56:03 2018
+| Date         : Thu Jan 11 18:31:57 2018
 | Host         : Lenovo running 64-bit major release  (build 9200)
 | Command      : report_methodology -file sopc_methodology_drc_routed.rpt -pb sopc_methodology_drc_routed.pb -rpx sopc_methodology_drc_routed.rpx
 | Design       : sopc
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 121
+             Violations found: 119
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
 | TIMING-18 | Warning  | Missing input or output delay | 3          |
-| TIMING-20 | Warning  | Non-clocked latch             | 118        |
+| TIMING-20 | Warning  | Non-clocked latch             | 116        |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -400,240 +400,230 @@ Related violations: <none>
 
 TIMING-20#71 Warning
 Non-clocked latch  
-The latch risc32i0/cache0/uart_recv_flag_reg cannot be properly analyzed as its control pin risc32i0/cache0/uart_recv_flag_reg/G is not reached by a timing clock
+The latch risc32i0/cache0/uart_send_data_reg[0] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#72 Warning
 Non-clocked latch  
-The latch risc32i0/cache0/uart_send_data_reg[0] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[0]/G is not reached by a timing clock
+The latch risc32i0/cache0/uart_send_data_reg[1] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#73 Warning
 Non-clocked latch  
-The latch risc32i0/cache0/uart_send_data_reg[1] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[1]/G is not reached by a timing clock
+The latch risc32i0/cache0/uart_send_data_reg[2] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#74 Warning
 Non-clocked latch  
-The latch risc32i0/cache0/uart_send_data_reg[2] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[2]/G is not reached by a timing clock
+The latch risc32i0/cache0/uart_send_data_reg[3] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#75 Warning
 Non-clocked latch  
-The latch risc32i0/cache0/uart_send_data_reg[3] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[3]/G is not reached by a timing clock
+The latch risc32i0/cache0/uart_send_data_reg[4] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#76 Warning
 Non-clocked latch  
-The latch risc32i0/cache0/uart_send_data_reg[4] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[4]/G is not reached by a timing clock
+The latch risc32i0/cache0/uart_send_data_reg[5] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#77 Warning
 Non-clocked latch  
-The latch risc32i0/cache0/uart_send_data_reg[5] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[5]/G is not reached by a timing clock
+The latch risc32i0/cache0/uart_send_data_reg[6] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[6]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#78 Warning
 Non-clocked latch  
-The latch risc32i0/cache0/uart_send_data_reg[6] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[6]/G is not reached by a timing clock
+The latch risc32i0/cache0/uart_send_data_reg[7] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[7]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#79 Warning
 Non-clocked latch  
-The latch risc32i0/cache0/uart_send_data_reg[7] cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_data_reg[7]/G is not reached by a timing clock
+The latch risc32i0/id0/jump_type_o_reg[0] cannot be properly analyzed as its control pin risc32i0/id0/jump_type_o_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#80 Warning
 Non-clocked latch  
-The latch risc32i0/cache0/uart_send_flag_reg cannot be properly analyzed as its control pin risc32i0/cache0/uart_send_flag_reg/G is not reached by a timing clock
+The latch risc32i0/id0/jump_type_o_reg[1] cannot be properly analyzed as its control pin risc32i0/id0/jump_type_o_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#81 Warning
 Non-clocked latch  
-The latch risc32i0/id0/jump_type_o_reg[0] cannot be properly analyzed as its control pin risc32i0/id0/jump_type_o_reg[0]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_mask_reg[0] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_mask_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#82 Warning
 Non-clocked latch  
-The latch risc32i0/id0/jump_type_o_reg[1] cannot be properly analyzed as its control pin risc32i0/id0/jump_type_o_reg[1]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_mask_reg[1] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_mask_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#83 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_mask_reg[0] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_mask_reg[0]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_mask_reg[2] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_mask_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#84 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_mask_reg[1] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_mask_reg[1]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_mask_reg[3] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_mask_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#85 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_mask_reg[2] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_mask_reg[2]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[0] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[0]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#86 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_mask_reg[3] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_mask_reg[3]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[10] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[10]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#87 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[0] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[0]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[11] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[11]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#88 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[10] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[10]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[12] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[12]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#89 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[11] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[11]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[13] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[13]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#90 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[12] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[12]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[14] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[14]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#91 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[13] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[13]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[15] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[15]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#92 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[14] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[14]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[16] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[16]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#93 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[15] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[15]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[17] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[17]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#94 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[16] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[16]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[18] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[18]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#95 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[17] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[17]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[19] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[19]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#96 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[18] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[18]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[1] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[1]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#97 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[19] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[19]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[20] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[20]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#98 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[1] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[1]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[21] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[21]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#99 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[20] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[20]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[22] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[22]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#100 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[21] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[21]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[23] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[23]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#101 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[22] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[22]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[24] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[24]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#102 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[23] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[23]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[25] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[25]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#103 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[24] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[24]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[26] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[26]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#104 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[25] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[25]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[27] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[27]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#105 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[26] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[26]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[28] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[28]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#106 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[27] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[27]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[29] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[29]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#107 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[28] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[28]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[2] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[2]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#108 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[29] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[29]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[30] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[30]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#109 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[2] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[2]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[31] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[31]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#110 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[30] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[30]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[3] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[3]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#111 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[31] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[31]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[4] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[4]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#112 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[3] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[3]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[5] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[5]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#113 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[4] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[4]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[6] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[6]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#114 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[5] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[5]/G is not reached by a timing clock
+The latch risc32i0/mem0/write_data_value_reg[7] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[7]/G is not reached by a timing clock
 Related violations: <none>
 
 TIMING-20#115 Warning
 Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[6] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[6]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#116 Warning
-Non-clocked latch  
-The latch risc32i0/mem0/write_data_value_reg[7] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[7]/G is not reached by a timing clock
-Related violations: <none>
-
-TIMING-20#117 Warning
-Non-clocked latch  
 The latch risc32i0/mem0/write_data_value_reg[8] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[8]/G is not reached by a timing clock
 Related violations: <none>
 
-TIMING-20#118 Warning
+TIMING-20#116 Warning
 Non-clocked latch  
 The latch risc32i0/mem0/write_data_value_reg[9] cannot be properly analyzed as its control pin risc32i0/mem0/write_data_value_reg[9]/G is not reached by a timing clock
 Related violations: <none>
