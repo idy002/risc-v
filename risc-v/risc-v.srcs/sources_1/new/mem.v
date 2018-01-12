@@ -42,6 +42,8 @@ module mem(
 			data_ce <= `ChipDisable;
 			data_optype <= 1'b0;
 			data_addr <= `ZeroWord;
+			write_data_value <= `ZeroWord;
+			write_data_mask <= 0;
             wdata_o <= wdata_i;
             wd_o <= wd_i;
             wreg_o <= wreg_i;

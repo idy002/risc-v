@@ -83,11 +83,17 @@ module memory_sim(
 					next_count <= cur_count;
 				end
 			end else if(cur_count == 9) begin	//	write
+			    if(mask[0]) data[addr+0] <= bytes[5 + 0];
+			    if(mask[1]) data[addr+1] <= bytes[5 + 1];
+			    if(mask[2]) data[addr+2] <= bytes[5 + 2];
+				if(mask[3]) data[addr+3] <= bytes[5 + 3];
+				/*
 				for(idx = 0; idx < 4; idx=idx+1) begin
 					if(mask[idx]) begin
 						data[addr+idx] <= bytes[5+idx];
 					end
 				end
+				*/
 				next_count <= 0;
 				next_disp <= 0;
 				if(addr == 32'h104 && mask[0]) begin
@@ -97,43 +103,6 @@ module memory_sim(
 					$display("access %x, successfully exit", 32'h108);
 					$finish;
 				end
-				/*
-				if(mask[cur_disp] == 1'b0) begin
-					if(cur_disp == FullDisp) begin
-						next_disp <= 0;
-						next_count <= 0;
-						$display("[memory_sim] cpu write request [%d], write data %x, mask[%d%d%d%d]",
-							addr, {bytes[8], bytes[7], bytes[6], bytes[5]}, 
-							bytes[4][3], bytes[4][2], bytes[4][1], bytes[4][0]
-						);
-					end else begin
-						next_disp <= cur_disp + 1;
-						next_count <= cur_count;
-					end
-				end else if(uart_receivable) begin
-					uart_recv_flag <= 1;
-					data[addr + cur_disp] <= uart_recv_data;
-					if(cur_disp == FullDisp) begin
-						next_disp <= 0;
-						next_count <= 0;
-						$display("[memory_sim] cpu write request [%d], write data %x, mask[%d%d%d%d]",
-							addr, {bytes[8], bytes[7], bytes[6], bytes[5]}, 
-							bytes[4][3], bytes[4][2], bytes[4][1], bytes[4][0]
-						);
-						if(addr == 32'h104 && mask[0] == 1) begin
-							next_disp <= 0;
-							$display("write %c to 0x104", bytes[5]);
-							$finish;
-						end
-					end else begin
-						next_disp <= cur_disp + 1;
-						next_count <= cur_count;
-					end
-				end else begin
-					next_disp <= cur_disp;
-					next_count <= cur_count;
-				end
-				*/
 			end else begin	//	fetch data
 				if(uart_receivable) begin
 					uart_recv_flag <= 1;

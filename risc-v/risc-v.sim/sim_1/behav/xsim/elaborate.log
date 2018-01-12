@@ -1,12 +1,17 @@
 Vivado Simulator 2017.3
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: D:/Vivado/Vivado/2017.3/bin/unwrapped/win64.o/xelab.exe -wto 3de1b15d774f4e50b2e81004d1069335 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sopc_tb_behav xil_defaultlib.sopc_tb xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Vivado/Vivado/2017.3/bin/unwrapped/win64.o/xelab.exe -wto 3de1b15d774f4e50b2e81004d1069335 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot sim_behav xil_defaultlib.sim xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module unisims_ver.BUFG
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=10.0,...
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
 Compiling module xil_defaultlib.pc_reg
 Compiling module xil_defaultlib.if_id
 Compiling module xil_defaultlib.id
@@ -17,9 +22,12 @@ Compiling module xil_defaultlib.mem
 Compiling module xil_defaultlib.mem_wb
 Compiling module xil_defaultlib.regfile
 Compiling module xil_defaultlib.ctrl
+Compiling module xil_defaultlib.fifo_default
+Compiling module xil_defaultlib.uart_comm_default
 Compiling module xil_defaultlib.cache
 Compiling module xil_defaultlib.risc32i
-Compiling module xil_defaultlib.sopc
-Compiling module xil_defaultlib.sopc_tb
+Compiling module xil_defaultlib.cpu
+Compiling module xil_defaultlib.memory_sim
+Compiling module xil_defaultlib.sim
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot sopc_tb_behav
+Built simulation snapshot sim_behav

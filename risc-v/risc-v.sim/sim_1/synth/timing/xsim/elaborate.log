@@ -1,0 +1,25 @@
+Vivado Simulator 2017.3
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Vivado/2017.3/bin/unwrapped/win64.o/xelab.exe -wto 3de1b15d774f4e50b2e81004d1069335 --incr --debug typical --relax --mt 2 --maxdelay -L xil_defaultlib -L simprims_ver -L secureip --snapshot sim_time_synth -transport_int_delays -pulse_r 0 -pulse_int_r 0 -pulse_e 0 -pulse_int_e 0 xil_defaultlib.sim xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-426] cannot find port wb_wdata_reg[31] on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3832]
+ERROR: [VRFC 10-426] cannot find port rst_BUFG on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3831]
+ERROR: [VRFC 10-426] cannot find port rst on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3830]
+ERROR: [VRFC 10-426] cannot find port out on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3829]
+ERROR: [VRFC 10-426] cannot find port memop_o_reg[1] on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3828]
+ERROR: [VRFC 10-426] cannot find port mem_data_optype on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3827]
+ERROR: [VRFC 10-426] cannot find port mem_data_ce on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3826]
+ERROR: [VRFC 10-426] cannot find port id_inst_reg[7] on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3825]
+ERROR: [VRFC 10-426] cannot find port id_inst_reg[24] on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3824]
+ERROR: [VRFC 10-426] cannot find port cur_disp_reg[2] on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3823]
+ERROR: [VRFC 10-426] cannot find port cur_disp_reg[1] on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3822]
+ERROR: [VRFC 10-426] cannot find port cur_disp_reg[0]_1 on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3821]
+ERROR: [VRFC 10-426] cannot find port cur_disp_reg[0]_0 on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3820]
+ERROR: [VRFC 10-426] cannot find port cur_disp_reg[0] on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3819]
+ERROR: [VRFC 10-426] cannot find port clk_out1 on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3818]
+ERROR: [VRFC 10-426] cannot find port ce_reg on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3817]
+ERROR: [VRFC 10-426] cannot find port ce on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3816]
+ERROR: [VRFC 10-426] cannot find port Rx_IBUF on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3814]
+ERROR: [VRFC 10-426] cannot find port Q on this module [C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.sim/sim_1/synth/timing/xsim/sim_time_synth.v:3813]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

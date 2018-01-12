@@ -2,11 +2,11 @@
 # Vivado v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Thu Jan 11 18:28:37 2018
-# Process ID: 1180
+# Start of session at: Fri Jan 12 03:24:13 2018
+# Process ID: 8728
 # Current directory: C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1
-# Command line: vivado.exe -log sopc.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sopc.tcl
-# Log file: C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/sopc.vds
+# Command line: vivado.exe -log cpu.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu.tcl
+# Log file: C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1/cpu.vds
 # Journal file: C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source sopc.tcl -notrace
+source cpu.tcl -notrace

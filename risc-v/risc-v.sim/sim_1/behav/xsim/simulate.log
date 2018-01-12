@@ -1,2 +1,818 @@
 Vivado Simulator 2017.3
 Time resolution is 1 ps
+[cache] send inst head [0000000000]
+[memory_sim] cpu read request [00000000], send data 10000137
+[cache] recv inst value [00000137]
+[cache] recv inst value [10000137]
+[cache] recv inst value [10000137]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [0000000004]
+[memory_sim] cpu read request [00000004], send data 094010ef
+[cache] recv inst value [004010ef]
+[cache] recv inst value [094010ef]
+[cache] recv inst value [094010ef]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [0000000008]
+[memory_sim] cpu read request [00000008], send data 0ff0000f
+[cache] recv inst value [10f0000f]
+[cache] recv inst value [0ff0000f]
+[cache] recv inst value [0ff0000f]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [0000000008]
+[memory_sim] cpu read request [00000008], send data 0ff0000f
+[cache] recv inst value [09f0000f]
+[cache] recv inst value [0ff0000f]
+[cache] recv inst value [0ff0000f]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [0000001098]
+[memory_sim] cpu read request [00001098], send data 000017b7
+[cache] recv inst value [0f0017b7]
+[cache] recv inst value [000017b7]
+[cache] recv inst value [000017b7]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [000000109c]
+[memory_sim] cpu read request [0000109c], send data 0c478793
+[cache] recv inst value [0f478793]
+[cache] recv inst value [0c478793]
+[cache] recv inst value [0c478793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a0]
+[memory_sim] cpu read request [000010a0], send data 04800713
+[cache] recv inst value [00800713]
+[cache] recv inst value [04800713]
+[cache] recv inst value [04800713]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a4]
+[memory_sim] cpu read request [000010a4], send data 10e00223
+[cache] recv inst value [0ce00223]
+[cache] recv inst value [10e00223]
+[cache] recv inst value [10e00223]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a8]
+[memory_sim] cpu read request [000010a8], send data 00178793
+[cache] recv inst value [04178793]
+[cache] recv inst value [00178793]
+[cache] recv inst value [00178793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010ac]
+[memory_sim] cpu read request [000010ac], send data 0007c703
+[cache] recv inst value [1007c703]
+[cache] recv inst value [0007c703]
+[cache] recv inst value [0007c703]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [f100000104]
+[cache] send data value [00000048]
+[cache] send inst head [00000010b0]
+[cache] send inst head [00000010b0]
+*** H ***
+*** H ***
+*** H ***
+[memory_sim] cpu read request [000010b0], send data fe071ae3
+[cache] recv inst value [00071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [00000010c4]
+[memory_sim] cpu read request [000010c4], send data 6c6c6548
+[cache] recv data value [fe6c6548]
+[cache] recv data value [6c6c6548]
+[cache] recv data value [6c6c6548]
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [6ca00793]
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a4]
+[memory_sim] cpu read request [000010a4], send data 10e00223
+[cache] recv inst value [00e00223]
+[cache] recv inst value [10e00223]
+[cache] recv inst value [10e00223]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a8]
+[memory_sim] cpu read request [000010a8], send data 00178793
+[cache] recv inst value [00178793]
+[cache] recv inst value [00178793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010ac]
+[memory_sim] cpu read request [000010ac], send data 0007c703
+[cache] recv inst value [1007c703]
+[cache] recv inst value [0007c703]
+[cache] recv inst value [0007c703]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [f100000104]
+[cache] send data value [00000065]
+[cache] send inst head [00000010b0]
+[cache] send inst head [00000010b0]
+*** e ***
+*** e ***
+*** e ***
+[memory_sim] cpu read request [000010b0], send data fe071ae3
+[cache] recv inst value [00071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [00000010c4]
+[memory_sim] cpu read request [000010c4], send data 6c6c6548
+[cache] recv data value [fe6c6548]
+[cache] recv data value [6c6c6548]
+[cache] recv data value [6c6c6548]
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [6ca00793]
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a4]
+[memory_sim] cpu read request [000010a4], send data 10e00223
+[cache] recv inst value [00e00223]
+[cache] recv inst value [10e00223]
+[cache] recv inst value [10e00223]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a8]
+[memory_sim] cpu read request [000010a8], send data 00178793
+[cache] recv inst value [00178793]
+[cache] recv inst value [00178793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010ac]
+[memory_sim] cpu read request [000010ac], send data 0007c703
+[cache] recv inst value [1007c703]
+[cache] recv inst value [0007c703]
+[cache] recv inst value [0007c703]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [f100000104]
+[cache] send data value [0000006c]
+[cache] send inst head [00000010b0]
+[cache] send inst head [00000010b0]
+*** l ***
+*** l ***
+*** l ***
+[memory_sim] cpu read request [000010b0], send data fe071ae3
+[cache] recv inst value [00071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [00000010c4]
+[memory_sim] cpu read request [000010c4], send data 6c6c6548
+[cache] recv data value [fe6c6548]
+[cache] recv data value [6c6c6548]
+[cache] recv data value [6c6c6548]
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [6ca00793]
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a4]
+[memory_sim] cpu read request [000010a4], send data 10e00223
+[cache] recv inst value [00e00223]
+[cache] recv inst value [10e00223]
+[cache] recv inst value [10e00223]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a8]
+[memory_sim] cpu read request [000010a8], send data 00178793
+[cache] recv inst value [00178793]
+[cache] recv inst value [00178793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010ac]
+[memory_sim] cpu read request [000010ac], send data 0007c703
+[cache] recv inst value [1007c703]
+[cache] recv inst value [0007c703]
+[cache] recv inst value [0007c703]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [f100000104]
+[cache] send data value [0000006c]
+[cache] send inst head [00000010b0]
+[cache] send inst head [00000010b0]
+*** l ***
+*** l ***
+[memory_sim] cpu read request [000010b0], send data fe071ae3
+[cache] recv inst value [00071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [00000010c8]
+[memory_sim] cpu read request [000010c8], send data 6f57206f
+[cache] recv data value [fe57206f]
+[cache] recv data value [6f57206f]
+[cache] recv data value [6f57206f]
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [6fa00793]
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a4]
+[memory_sim] cpu read request [000010a4], send data 10e00223
+[cache] recv inst value [00e00223]
+[cache] recv inst value [10e00223]
+[cache] recv inst value [10e00223]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a8]
+[memory_sim] cpu read request [000010a8], send data 00178793
+[cache] recv inst value [00178793]
+[cache] recv inst value [00178793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010ac]
+[memory_sim] cpu read request [000010ac], send data 0007c703
+[cache] recv inst value [1007c703]
+[cache] recv inst value [0007c703]
+[cache] recv inst value [0007c703]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [f100000104]
+[cache] send data value [0000006f]
+[cache] send inst head [00000010b0]
+[cache] send inst head [00000010b0]
+*** o ***
+*** o ***
+*** o ***
+[memory_sim] cpu read request [000010b0], send data fe071ae3
+[cache] recv inst value [00071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [00000010c8]
+[memory_sim] cpu read request [000010c8], send data 6f57206f
+[cache] recv data value [fe57206f]
+[cache] recv data value [6f57206f]
+[cache] recv data value [6f57206f]
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [6fa00793]
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a4]
+[memory_sim] cpu read request [000010a4], send data 10e00223
+[cache] recv inst value [00e00223]
+[cache] recv inst value [10e00223]
+[cache] recv inst value [10e00223]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a8]
+[memory_sim] cpu read request [000010a8], send data 00178793
+[cache] recv inst value [00178793]
+[cache] recv inst value [00178793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010ac]
+[memory_sim] cpu read request [000010ac], send data 0007c703
+[cache] recv inst value [1007c703]
+[cache] recv inst value [0007c703]
+[cache] recv inst value [0007c703]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [f100000104]
+[cache] send data value [00000020]
+[cache] send inst head [00000010b0]
+[cache] send inst head [00000010b0]
+***   ***
+***   ***
+***   ***
+[memory_sim] cpu read request [000010b0], send data fe071ae3
+[cache] recv inst value [00071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [00000010c8]
+[memory_sim] cpu read request [000010c8], send data 6f57206f
+[cache] recv data value [fe57206f]
+[cache] recv data value [6f57206f]
+[cache] recv data value [6f57206f]
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [6fa00793]
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a4]
+[memory_sim] cpu read request [000010a4], send data 10e00223
+[cache] recv inst value [00e00223]
+[cache] recv inst value [10e00223]
+[cache] recv inst value [10e00223]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a8]
+[memory_sim] cpu read request [000010a8], send data 00178793
+[cache] recv inst value [00178793]
+[cache] recv inst value [00178793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010ac]
+[memory_sim] cpu read request [000010ac], send data 0007c703
+[cache] recv inst value [1007c703]
+[cache] recv inst value [0007c703]
+[cache] recv inst value [0007c703]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [f100000104]
+[cache] send data value [00000057]
+[cache] send inst head [00000010b0]
+[cache] send inst head [00000010b0]
+*** W ***
+*** W ***
+*** W ***
+[memory_sim] cpu read request [000010b0], send data fe071ae3
+[cache] recv inst value [00071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [00000010c8]
+[memory_sim] cpu read request [000010c8], send data 6f57206f
+[cache] recv data value [fe57206f]
+[cache] recv data value [6f57206f]
+[cache] recv data value [6f57206f]
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [6fa00793]
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a4]
+[memory_sim] cpu read request [000010a4], send data 10e00223
+[cache] recv inst value [00e00223]
+[cache] recv inst value [10e00223]
+[cache] recv inst value [10e00223]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a8]
+[memory_sim] cpu read request [000010a8], send data 00178793
+[cache] recv inst value [00178793]
+[cache] recv inst value [00178793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010ac]
+[memory_sim] cpu read request [000010ac], send data 0007c703
+[cache] recv inst value [1007c703]
+[cache] recv inst value [0007c703]
+[cache] recv inst value [0007c703]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [f100000104]
+[cache] send data value [0000006f]
+[cache] send inst head [00000010b0]
+[cache] send inst head [00000010b0]
+*** o ***
+*** o ***
+*** o ***
+[memory_sim] cpu read request [000010b0], send data fe071ae3
+[cache] recv inst value [00071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [00000010cc]
+[memory_sim] cpu read request [000010cc], send data 21646c72
+[cache] recv data value [fe646c72]
+[cache] recv data value [21646c72]
+[cache] recv data value [21646c72]
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [21a00793]
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a4]
+[memory_sim] cpu read request [000010a4], send data 10e00223
+[cache] recv inst value [00e00223]
+[cache] recv inst value [10e00223]
+[cache] recv inst value [10e00223]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a8]
+[memory_sim] cpu read request [000010a8], send data 00178793
+[cache] recv inst value [00178793]
+[cache] recv inst value [00178793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010ac]
+[memory_sim] cpu read request [000010ac], send data 0007c703
+[cache] recv inst value [1007c703]
+[cache] recv inst value [0007c703]
+[cache] recv inst value [0007c703]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [f100000104]
+[cache] send data value [00000072]
+[cache] send inst head [00000010b0]
+[cache] send inst head [00000010b0]
+*** r ***
+*** r ***
+*** r ***
+[memory_sim] cpu read request [000010b0], send data fe071ae3
+[cache] recv inst value [00071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [00000010cc]
+[memory_sim] cpu read request [000010cc], send data 21646c72
+[cache] recv data value [fe646c72]
+[cache] recv data value [21646c72]
+[cache] recv data value [21646c72]
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [21a00793]
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a4]
+[memory_sim] cpu read request [000010a4], send data 10e00223
+[cache] recv inst value [00e00223]
+[cache] recv inst value [10e00223]
+[cache] recv inst value [10e00223]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a8]
+[memory_sim] cpu read request [000010a8], send data 00178793
+[cache] recv inst value [00178793]
+[cache] recv inst value [00178793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010ac]
+[memory_sim] cpu read request [000010ac], send data 0007c703
+[cache] recv inst value [1007c703]
+[cache] recv inst value [0007c703]
+[cache] recv inst value [0007c703]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [f100000104]
+[cache] send data value [0000006c]
+[cache] send inst head [00000010b0]
+[cache] send inst head [00000010b0]
+*** l ***
+*** l ***
+*** l ***
+[memory_sim] cpu read request [000010b0], send data fe071ae3
+[cache] recv inst value [00071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [00000010cc]
+[memory_sim] cpu read request [000010cc], send data 21646c72
+[cache] recv data value [fe646c72]
+[cache] recv data value [21646c72]
+[cache] recv data value [21646c72]
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [21a00793]
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a4]
+[memory_sim] cpu read request [000010a4], send data 10e00223
+[cache] recv inst value [00e00223]
+[cache] recv inst value [10e00223]
+[cache] recv inst value [10e00223]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a8]
+[memory_sim] cpu read request [000010a8], send data 00178793
+[cache] recv inst value [00178793]
+[cache] recv inst value [00178793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010ac]
+[memory_sim] cpu read request [000010ac], send data 0007c703
+[cache] recv inst value [1007c703]
+[cache] recv inst value [0007c703]
+[cache] recv inst value [0007c703]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [f100000104]
+[cache] send data value [00000064]
+[cache] send inst head [00000010b0]
+[cache] send inst head [00000010b0]
+*** d ***
+*** d ***
+*** d ***
+[memory_sim] cpu read request [000010b0], send data fe071ae3
+[cache] recv inst value [00071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [00000010cc]
+[memory_sim] cpu read request [000010cc], send data 21646c72
+[cache] recv data value [fe646c72]
+[cache] recv data value [21646c72]
+[cache] recv data value [21646c72]
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [21a00793]
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a4]
+[memory_sim] cpu read request [000010a4], send data 10e00223
+[cache] recv inst value [00e00223]
+[cache] recv inst value [10e00223]
+[cache] recv inst value [10e00223]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010a8]
+[memory_sim] cpu read request [000010a8], send data 00178793
+[cache] recv inst value [00178793]
+[cache] recv inst value [00178793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010ac]
+[memory_sim] cpu read request [000010ac], send data 0007c703
+[cache] recv inst value [1007c703]
+[cache] recv inst value [0007c703]
+[cache] recv inst value [0007c703]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [f100000104]
+[cache] send data value [00000021]
+[cache] send inst head [00000010b0]
+[cache] send inst head [00000010b0]
+*** ! ***
+*** ! ***
+*** ! ***
+[memory_sim] cpu read request [000010b0], send data fe071ae3
+[cache] recv inst value [00071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] recv inst value [fe071ae3]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [00000010d0]
+[memory_sim] cpu read request [000010d0], send data 00000000
+[cache] recv data value [fe000000]
+[cache] recv data value [00000000]
+[cache] recv data value [00000000]
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b4]
+[memory_sim] cpu read request [000010b4], send data 00a00793
+[cache] recv inst value [00a00793]
+[cache] recv inst value [00a00793]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010b8]
+[memory_sim] cpu read request [000010b8], send data 10f00223
+[cache] recv inst value [00f00223]
+[cache] recv inst value [10f00223]
+[cache] recv inst value [10f00223]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010bc]
+[memory_sim] cpu read request [000010bc], send data 00000513
+[cache] recv inst value [00000513]
+[cache] recv inst value [00000513]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010c0]
+[memory_sim] cpu read request [000010c0], send data 00008067
+[cache] recv inst value [10008067]
+[cache] recv inst value [00008067]
+[cache] recv inst value [00008067]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [f100000104]
+[cache] send data value [0000000a]
+[cache] send inst head [00000010c4]
+[cache] send inst head [00000010c4]
+*** 
+ ***
+*** 
+ ***
+*** 
+ ***
+[memory_sim] cpu read request [000010c4], send data 6c6c6548
+[cache] recv inst value [006c6548]
+[cache] recv inst value [6c6c6548]
+[cache] recv inst value [6c6c6548]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [00000010c4]
+[memory_sim] cpu read request [000010c4], send data 6c6c6548
+[cache] recv inst value [006c6548]
+[cache] recv inst value [6c6c6548]
+[cache] recv inst value [6c6c6548]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [0000000008]
+[memory_sim] cpu read request [00000008], send data 0ff0000f
+[cache] recv inst value [6cf0000f]
+[cache] recv inst value [0ff0000f]
+[cache] recv inst value [0ff0000f]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [000000000c]
+[memory_sim] cpu read request [0000000c], send data 0ff00513
+[cache] recv inst value [6cf00513]
+[cache] recv inst value [0ff00513]
+[cache] recv inst value [0ff00513]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [0000000010]
+[memory_sim] cpu read request [00000010], send data 10a00423
+[cache] recv inst value [0fa00423]
+[cache] recv inst value [10a00423]
+[cache] recv inst value [10a00423]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [0000000014]
+[memory_sim] cpu read request [00000014], send data 0000006f
+[cache] recv inst value [0f00006f]
+[cache] recv inst value [0000006f]
+[cache] recv inst value [0000006f]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send inst head [0000000018]
+[memory_sim] cpu read request [00000018], send data 00000000
+[cache] recv inst value [10000000]
+[cache] recv inst value [00000000]
+[cache] recv inst value [00000000]
+[cache] cur_status: CS_OUTPUT
+[cache] cur_status: CS_OUTPUT
+[cache] send data head [f100000108]
+[cache] send data value [000000ff]
+[cache] send inst head [0000000018]
+[cache] send inst head [0000000018]
+access 00000108, successfully exit
+$finish called at time : 507825 ns : File "C:/Users/99486/Desktop/architecture/risc-v/risc-v/risc-v.srcs/sources_1/new/memory_sim.v" Line 104

@@ -134,10 +134,14 @@ module cache(
 			next_disp	<= 0;
 			uart_send_flag <= `SendDisable;
 			uart_recv_flag <= `RecvDisable;
+			uart_send_data <= 0;
 			inst_value <= 0;
 			read_data_value <= 0;
 		end else begin
-			uart_send_flag <= `SendDisable;
+		    next_status <= cur_status;
+		    next_disp   <= 0;
+		    uart_send_data <= 0;
+		    uart_send_flag <= `SendDisable;
 			uart_recv_flag <= `RecvDisable;
 			case (cur_status) 
 				CS_READY: begin
@@ -155,8 +159,20 @@ module cache(
 				CS_DATA_HEAD: begin
 					if (uart_sendable) begin
 						uart_send_flag <= `SendEnable;
+						/*
 						for(index = 0; index < 8; index = index + 1) 
 							uart_send_data[index] <= cur_head[{cur_disp,index[2:0]}];
+						*/
+                        if(cur_disp == 3'b000) 
+                          uart_send_data <= cur_head[7:0];
+                        else if(cur_disp == 3'b001)
+                          uart_send_data <= cur_head[15:8];
+                        else if(cur_disp == 3'b010)
+                          uart_send_data <= cur_head[23:16];
+                        else if(cur_disp == 3'b011)
+                          uart_send_data <= cur_head[31:24];
+                        else
+                          uart_send_data <= cur_head[39:32];
 						if(cur_disp == HeadFullDisp) begin
 							next_status <= CS_DATA_VALUE;
 							next_disp <= 0;
@@ -174,8 +190,18 @@ module cache(
 					if (data_optype == `MemRead) begin
 						if (uart_receivable) begin
 							uart_recv_flag <= `RecvEnable;
+							/*
 							for(index = 0; index < 8; index = index + 1) 
 								read_data_value[{cur_disp,index[2:0]}] <= uart_recv_data[index];
+							*/
+                            if(cur_disp == 3'b000) 
+                              read_data_value[7:0] <= uart_recv_data;
+                            else if(cur_disp == 3'b001)
+                              read_data_value[15:8] <= uart_recv_data;
+                            else if(cur_disp == 3'b010)
+                              read_data_value[23:16] <= uart_recv_data;
+                            else
+                              read_data_value[31:24] <= uart_recv_data;
 							if(cur_disp == DataFullDisp) begin
 								next_disp <= 0;
 								if(inst_ce)
@@ -194,8 +220,18 @@ module cache(
 					end else begin
 						if (uart_sendable) begin
 							uart_send_flag <= `SendEnable;
+							/*
 							for(index = 0; index < 8; index = index + 1) 
 								uart_send_data[index] <= write_data_value[{cur_disp,index[2:0]}];
+							*/
+							if(cur_disp == 3'b000) 
+                              uart_send_data <= write_data_value[7:0];
+                            else if(cur_disp == 3'b001)
+                              uart_send_data <= write_data_value[15:8];
+                            else if(cur_disp == 3'b010)
+                              uart_send_data <= write_data_value[23:16];
+                            else 
+                              uart_send_data <= write_data_value[31:24];
 							if(cur_disp == DataFullDisp) begin
 								next_disp <= 0;
 								if(inst_ce) begin
@@ -217,8 +253,20 @@ module cache(
 				CS_INST_HEAD: begin
 					if (uart_sendable) begin
 						uart_send_flag <= `SendEnable;
+						/*
 						for(index = 0; index < 8; index = index + 1) 
 							uart_send_data[index] <= cur_head[{cur_disp,index[2:0]}];
+						*/
+						if(cur_disp == 3'b000) 
+						  uart_send_data <= cur_head[7:0];
+						else if(cur_disp == 3'b001)
+						  uart_send_data <= cur_head[15:8];
+						else if(cur_disp == 3'b010)
+						  uart_send_data <= cur_head[23:16];
+						else if(cur_disp == 3'b011)
+						  uart_send_data <= cur_head[31:24];
+						else
+						  uart_send_data <= cur_head[39:32];
 						if(cur_disp == HeadFullDisp) begin
 							next_status <= CS_INST_VALUE;
 							next_disp <= 0;
@@ -235,8 +283,18 @@ module cache(
 				CS_INST_VALUE: begin
 					if (uart_receivable) begin
 						uart_recv_flag <= `RecvEnable;
+						/*
 						for(index = 0; index < 8; index = index + 1) 
 							inst_value[{cur_disp,index[2:0]}] <= uart_recv_data[index];
+						*/
+						if(cur_disp == 3'b000) 
+						  inst_value[7:0] <= uart_recv_data;
+						else if(cur_disp == 3'b001)
+						  inst_value[15:8] <= uart_recv_data;
+						else if(cur_disp == 3'b010)
+						  inst_value[23:16] <= uart_recv_data;
+						else
+						  inst_value[31:24] <= uart_recv_data;
 						if(cur_disp == DataFullDisp) begin
 							next_disp <= 0;
 							next_status <= CS_OUTPUT;

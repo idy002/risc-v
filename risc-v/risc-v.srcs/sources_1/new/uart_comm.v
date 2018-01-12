@@ -5,8 +5,8 @@
 
 module uart_comm 
 	#(
-	parameter BAUDRATE =   25000000,
-	parameter CLOCKRATE = 100000000
+	parameter BAUDRATE =    25000000,
+	parameter CLOCKRATE =   100000000
 	)(
 	input CLK,
 	input RST,

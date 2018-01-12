@@ -475,6 +475,7 @@ module id(
 			stall_req <= `NoRequestStall;
 			wreg_o <= `WriteDisable;
 			memop_o <= `MEM_NOP;
+			jump_type_o <= `NoJump;
 		end else begin
 			if(sub_reqstall[1] || sub_reqstall[2] || sub_reqstall[3]) begin
 				stall_req <= `RequestStall;

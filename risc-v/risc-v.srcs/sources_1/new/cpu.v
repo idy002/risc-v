@@ -34,7 +34,7 @@ module cpu(
     end
 */
     
-	/*
+
     reg rst;
     reg rst_delay;
     
@@ -58,11 +58,12 @@ module cpu(
 		.Tx(Tx),
 		.Rx(Rx)
     );
-	*/
+
+	/*
    risc32i risc32i0(
 	   .clk(EXclk),
 	   .rst(button),
 	   .Tx(Tx),
 	   .Rx(Rx)
-   );
+   );*/
 endmodule
