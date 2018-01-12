@@ -8,7 +8,7 @@
 
 ## 1. 数据流图
 
-![数据流图](C:\Users\99486\Desktop\data flow.png)
+![数据流图](https://github.com/idy002/risc-v/blob/master/data%20flow.png)
 
 基本介绍：
 
